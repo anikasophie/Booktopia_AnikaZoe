@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class Buecherliste extends JFrame{
+public class BuecherEingabe extends JFrame{
     private JPanel jpPanel;
     private JTextField jtTitelEingabe;
     private JComboBox comboGenre;
@@ -13,10 +13,11 @@ public class Buecherliste extends JFrame{
     private JRadioButton rbtnDreiSterne;
     private JRadioButton rbtnFünfSterne;
     private JButton btnSpeichern;
+    private JCheckBox checkBox1;
 
     //Konstruktor
-    public Buecherliste() throws HeadlessException {
-        setTitle ("Meine Bücher"); //***Titel noch sehr unkreativ
+    public BuecherEingabe() throws HeadlessException {
+        setTitle ("Büchereingabe"); //***Titel noch sehr unkreativ
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(600,300);
         setContentPane(jpPanel);
@@ -24,6 +25,10 @@ public class Buecherliste extends JFrame{
         setResizable(false);
 
 
-
     }
+
+
+
 }
+
+
