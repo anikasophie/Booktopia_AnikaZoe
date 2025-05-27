@@ -20,14 +20,13 @@ public class BuecherEingabe extends JFrame{
     private JRadioButton rbtnDreiSterne;
     private JRadioButton rbtnFünfSterne;
     private JButton btnSpeichern;
-    private JTextArea areaListe;
 
     // KONSTRUKTOR
 
     public BuecherEingabe() throws HeadlessException {
         setTitle ("Büchereingabe"); //***Titel noch sehr unkreativ
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(1500,900);
+        setSize(900,600);
         setContentPane(jpPanel);
         setVisible(true);
         setResizable(true);
