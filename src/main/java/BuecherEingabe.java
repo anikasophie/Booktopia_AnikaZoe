@@ -16,7 +16,7 @@ public class BuecherEingabe extends JFrame{
     private JRadioButton rbtnDreiSterne;
     private JRadioButton rbtnFünfSterne;
     private JButton btnSpeichern;
-    private JTextArea textArea1;
+    private JTextArea areaListe;
 
 
     //Konstruktor
