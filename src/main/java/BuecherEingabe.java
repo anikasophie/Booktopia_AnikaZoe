@@ -40,8 +40,8 @@ public class BuecherEingabe extends JFrame{
         buchListe.add(new Buch("Sherlock Holmes", true, "Krimi", 4));
         buchListe.add(new Buch("Grundkurs Java, 10. Aufl. ", false, "Fachliteratur", 5));
 
-    //--> Button-Initialisierung
-        ButtonGroup gruppierung = new ButtonGroup(); //Gruppierung der RadioButton so, dass immer nur einer ausgewählt werden kann
+    //--> Gruppierung der RadioButtons, sodass immer nur einer ausgewählt wird
+        ButtonGroup gruppierung = new ButtonGroup();
         gruppierung.add(rbtnEinStern);
         gruppierung.add(rbtnZweiSterne);
         gruppierung.add(rbtnDreiSterne);
@@ -49,7 +49,9 @@ public class BuecherEingabe extends JFrame{
         gruppierung.add(rbtnFünfSterne);
 
     //--> ActionListener
-        btnLöschen.addActionListener(new ActionListener() { //Löschen Button, Eingaben/Auswahl wieder wie bei Start
+
+        //Löschen Button, Eingaben/Auswahl wieder wie bei Start
+        btnLöschen.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 jtTitelEingabe.setText("");
@@ -62,7 +64,7 @@ public class BuecherEingabe extends JFrame{
             }
         });
 
-
+        //Speichern Button
         btnSpeichern.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
