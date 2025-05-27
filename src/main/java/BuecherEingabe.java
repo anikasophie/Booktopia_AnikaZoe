@@ -16,6 +16,7 @@ public class BuecherEingabe extends JFrame{
     private JRadioButton rbtnDreiSterne;
     private JRadioButton rbtnFünfSterne;
     private JButton btnSpeichern;
+    private JTextArea areaListe;
 
 
     //Konstruktor
@@ -36,7 +37,7 @@ public class BuecherEingabe extends JFrame{
 
 
 
-        btnLöschen.addActionListener(new ActionListener() { //Löschen Button, Eingaben/Auswhl wieder wie bei Start
+        btnLöschen.addActionListener(new ActionListener() { //Löschen Button, Eingaben/Auswahl wieder wie bei Start
             @Override
             public void actionPerformed(ActionEvent e) {
                 jtTitelEingabe.setText("");

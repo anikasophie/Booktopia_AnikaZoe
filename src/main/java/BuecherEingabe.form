@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="BuecherEingabe">
-  <grid id="27dc6" binding="jpPanel" layout-manager="GridLayoutManager" row-count="11" column-count="13" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="jpPanel" layout-manager="GridLayoutManager" row-count="11" column-count="12" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="10" left="10" bottom="10" right="10"/>
     <constraints>
-      <xy x="20" y="20" width="761" height="383"/>
+      <xy x="20" y="20" width="876" height="399"/>
     </constraints>
     <properties>
       <background color="-5188361"/>
@@ -68,11 +68,6 @@
           <text value="☆"/>
         </properties>
       </component>
-      <vspacer id="12789">
-        <constraints>
-          <grid row="10" column="12" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
-        </constraints>
-      </vspacer>
       <component id="6f294" class="javax.swing.JRadioButton" binding="rbtnZweiSterne">
         <constraints>
           <grid row="8" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
@@ -86,11 +81,6 @@
       <vspacer id="a5eb5">
         <constraints>
           <grid row="10" column="4" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
-        </constraints>
-      </vspacer>
-      <vspacer id="853b8">
-        <constraints>
-          <grid row="7" column="11" row-span="2" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
         </constraints>
       </vspacer>
       <component id="90549" class="javax.swing.JRadioButton" binding="rbtnDreiSterne">
@@ -195,11 +185,6 @@
           <text value="Fortsetzung vorhanden"/>
         </properties>
       </component>
-      <hspacer id="54432">
-        <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-      </hspacer>
       <component id="dc020" class="javax.swing.JLabel">
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
@@ -207,6 +192,21 @@
         <properties>
           <font name="Castellar" size="28" style="1"/>
           <text value="Booktopia"/>
+        </properties>
+      </component>
+      <hspacer id="54432">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </hspacer>
+      <component id="7dab2" class="javax.swing.JTextArea" binding="areaListe">
+        <constraints>
+          <grid row="1" column="11" row-span="10" col-span="1" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="50"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value=""/>
         </properties>
       </component>
     </children>

@@ -14,5 +14,8 @@ public class Buch {
     }
 
     public static void main(String[] args) {
+        Buch b1 = new Buch("Fourth Wing", true, "Fantasy", 5);
+        Buch b2 = new Buch("Buch 2", false, " ", 2);
+        Buch b3 = new Buch("Buch 3", true, " ", 3);
     }
 }
