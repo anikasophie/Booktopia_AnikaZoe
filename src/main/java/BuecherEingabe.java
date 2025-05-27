@@ -22,10 +22,10 @@ public class BuecherEingabe extends JFrame{
     public BuecherEingabe() throws HeadlessException {
         setTitle ("Büchereingabe"); //***Titel noch sehr unkreativ
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(600,600);
+        setSize(1500,900);
         setContentPane(jpPanel);
         setVisible(true);
-        setResizable(false);
+        setResizable(true);
 
         ButtonGroup grupperiung = new ButtonGroup(); //Gruppierung der RadioButton so, dass immer nur einer ausgewählt werden kann
         grupperiung.add(rbtnEinStern);
