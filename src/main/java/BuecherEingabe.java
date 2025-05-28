@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-public class BuecherEingabe extends JFrame{
+public class BuecherEingabe extends JFrame {
     private ArrayList<Buch> buchListe = new ArrayList<>();
 
 
@@ -25,22 +25,22 @@ public class BuecherEingabe extends JFrame{
     // KONSTRUKTOR
 
     public BuecherEingabe() throws HeadlessException {
-        setTitle ("Büchereingabe"); //***Titel noch sehr unkreativ
+        setTitle("Büchereingabe"); //***Titel noch sehr unkreativ
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(900,600);
+        setSize(900, 600);
         setContentPane(jpPanel);
         setVisible(true);
         setResizable(true);
 
-    // Liste leeren (Reset beim Start)
+        // Liste leeren (Reset beim Start)
         buchListe.clear();
 
-    // --> 3 Standardbücher hinzufügen
+        // --> 3 Standardbücher hinzufügen
         buchListe.add(new Buch("Harry Potter", true, "Fantasy", 5));
         buchListe.add(new Buch("Sherlock Holmes", true, "Krimi", 4));
         buchListe.add(new Buch("Grundkurs Java, 10. Aufl. ", false, "Fachliteratur", 5));
 
-    //--> Gruppierung der RadioButtons, sodass immer nur einer ausgewählt werden kann
+        //--> Gruppierung der RadioButtons, sodass immer nur einer ausgewählt werden kann
         ButtonGroup buttonGroup = new ButtonGroup();
         buttonGroup.add(rbtnEinStern);
         buttonGroup.add(rbtnZweiSterne);
@@ -48,7 +48,7 @@ public class BuecherEingabe extends JFrame{
         buttonGroup.add(rbtnVierSterne);
         buttonGroup.add(rbtnFünfSterne);
 
-    //--> ActionListener
+        //--> ActionListener
 
         //Löschen Button, Eingaben/Auswahl wieder wie bei Start
         btnLöschen.addActionListener(new ActionListener() {
@@ -85,7 +85,7 @@ public class BuecherEingabe extends JFrame{
                     bewertung = 5;
                 }
                 //Neues Buch-Objekt erstellen (mt gesammelten Infos) + in Liste einfügen
-                Buch neuesBuch = new Buch(titel,hatFortsetzung, genre, bewertung);
+                Buch neuesBuch = new Buch(titel, hatFortsetzung, genre, bewertung);
                 buchListe.add(neuesBuch);
 
                 // Info-Fenster anzeigen als Bestätigung
@@ -107,14 +107,9 @@ public class BuecherEingabe extends JFrame{
     }
 
 
-
-
-
-
-
-
     public static void main(String[] args) {
         BuecherEingabe buecherEingabe = new BuecherEingabe();
-    }}
+    }
+}
 
 

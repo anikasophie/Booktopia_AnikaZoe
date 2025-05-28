@@ -15,11 +15,11 @@ public class Buch {
 
     // Getter (um von außen auf Variaben zuzugreifen)
 
-    public String getTitel(){
+    public String getTitel() {
         return titel;
     }
 
-    public boolean isHatFortsetzung(){
+    public boolean isHatFortsetzung() {
         return hatFortsetzung;
     }
 
@@ -27,7 +27,7 @@ public class Buch {
         return genre;
     }
 
-    public int getBewertung(){
+    public int getBewertung() {
         return bewertung;
     }
 
