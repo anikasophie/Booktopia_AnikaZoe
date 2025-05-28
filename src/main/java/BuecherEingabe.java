@@ -34,18 +34,18 @@ public class BuecherEingabe extends JFrame{
     // Liste leeren (Reset beim Start)
         buchListe.clear();
 
-    // --> 3 Standartbücher hinzufügen
+    // --> 3 Standardbücher hinzufügen
         buchListe.add(new Buch("Harry Potter", true, "Fantasy", 5));
         buchListe.add(new Buch("Sherlock Holmes", true, "Krimi", 4));
         buchListe.add(new Buch("Grundkurs Java, 10. Aufl. ", false, "Fachliteratur", 5));
 
-    //--> Gruppierung der RadioButtons, sodass immer nur einer ausgewählt wird
-        ButtonGroup gruppierung = new ButtonGroup();
-        gruppierung.add(rbtnEinStern);
-        gruppierung.add(rbtnZweiSterne);
-        gruppierung.add(rbtnDreiSterne);
-        gruppierung.add(rbtnVierSterne);
-        gruppierung.add(rbtnFünfSterne);
+    //--> Gruppierung der RadioButtons, sodass immer nur einer ausgewählt werden kann
+        ButtonGroup buttonGroup = new ButtonGroup();
+        buttonGroup.add(rbtnEinStern);
+        buttonGroup.add(rbtnZweiSterne);
+        buttonGroup.add(rbtnDreiSterne);
+        buttonGroup.add(rbtnVierSterne);
+        buttonGroup.add(rbtnFünfSterne);
 
     //--> ActionListener
 
@@ -54,12 +54,9 @@ public class BuecherEingabe extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 jtTitelEingabe.setText("");
+                cBoxFortsetzung.setSelected(false);
                 comboGenre.setSelectedIndex(0);
-                rbtnEinStern.setSelected(false);
-                rbtnZweiSterne.setSelected(false);
-                rbtnDreiSterne.setSelected(false);
-                rbtnVierSterne.setSelected(false);
-                rbtnFünfSterne.setSelected(false);
+                buttonGroup.clearSelection();
             }
         });
 
@@ -92,6 +89,11 @@ public class BuecherEingabe extends JFrame{
 
                 // Info-Fenster anzeigen als Bestätigung
                 JOptionPane.showMessageDialog(null, "Buch gespeichert! ☺");
+
+                jtTitelEingabe.setText("");
+                cBoxFortsetzung.setSelected(false);
+                comboGenre.setSelectedIndex(0);
+                buttonGroup.clearSelection();
 
             }
         });
