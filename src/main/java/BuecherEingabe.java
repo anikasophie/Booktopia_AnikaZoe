@@ -7,6 +7,7 @@ import java.util.ArrayList;
 public class BuecherEingabe extends JFrame{
     private ArrayList<Buch> buchListe = new ArrayList<>();
 
+
     // GUI-Setup
     private JPanel jpPanel;
     private JTextField jtTitelEingabe;
@@ -97,9 +98,13 @@ public class BuecherEingabe extends JFrame{
 
             }
         });
+        btnListeAnzeigen.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Booktopia listeAnzeigen = new Booktopia();  //***Benennung komisch?
+            }
+        });
     }
-
-
 
 
 
