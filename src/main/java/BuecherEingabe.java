@@ -101,7 +101,9 @@ public class BuecherEingabe extends JFrame {
         btnListeAnzeigen.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Booktopia listeAnzeigen = new Booktopia();  //***Benennung komisch?
+                //Booktopia listeAnzeigen = new Booktopia(buchListe);
+                Booktopia booktopiaFenster = new Booktopia(buchListe);
+                booktopiaFenster.setVisible(true);//***Benennung komisch? - ja etwas..BuchFilter/ BuecherListeFilter?
             }
         });
     }

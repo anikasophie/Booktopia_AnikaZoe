@@ -6,6 +6,7 @@ public class Buch {
     private String genre;
     private int bewertung;
 
+    //Konstruktor
     public Buch(String titel, boolean hatFortsetzung, String genre, int bewertung) {
         this.titel = titel;
         this.hatFortsetzung = hatFortsetzung;
@@ -31,9 +32,16 @@ public class Buch {
         return bewertung;
     }
 
+    // toString-Methode um Standard-Ausgabe (z.B Buch@1831b) zu überschreiben
+    @Override
+    public String toString(){
+        //als lesbare Textzeile zurückgeben
+        return titel + " | Genre: " + genre +
+                " | Fortsetzung: " + (hatFortsetzung ? "Ja" : "Nein") +
+                " | Bewertung: " + bewertung + "★";
+    }
+
     public static void main(String[] args) {
-//        Buch b1 = new Buch("Fourth Wing", true, "Fantasy", 5);
-//        Buch b2 = new Buch("Buch 2", false, " ", 2);
-//        Buch b3 = new Buch("Buch 3", true, " ", 3); //*** habe gelesen, dass die statische Liste in BuecherEingabe soll, sorry!!, eine grobe Übersicht ist in Word
+
     }
 }
