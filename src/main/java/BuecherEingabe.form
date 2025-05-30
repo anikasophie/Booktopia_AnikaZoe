@@ -135,7 +135,9 @@
           <enabled value="true"/>
           <font name="Bookman Old Style" size="14"/>
           <model>
+            <item value=""/>
             <item value="Fantasy"/>
+            <item value="Krimi"/>
             <item value="Horror"/>
             <item value="Romantik"/>
             <item value="Komödie"/>
