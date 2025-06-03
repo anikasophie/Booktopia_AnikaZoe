@@ -3,7 +3,7 @@
   <grid id="27dc6" binding="jpPanel" layout-manager="GridLayoutManager" row-count="10" column-count="14" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="10" left="10" bottom="10" right="10"/>
     <constraints>
-      <xy x="2" y="74" width="912" height="432"/>
+      <xy x="2" y="74" width="947" height="432"/>
     </constraints>
     <properties>
       <background color="-5188361"/>

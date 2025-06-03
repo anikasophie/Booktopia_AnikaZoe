@@ -23,7 +23,6 @@ public class BuecherEingabe extends JFrame {
     private JButton btnSpeichern;
 
     // KONSTRUKTOR
-
     public BuecherEingabe() throws HeadlessException {
         setTitle("Büchereingabe"); //***Titel noch sehr unkreativ
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -65,45 +64,65 @@ public class BuecherEingabe extends JFrame {
         btnSpeichern.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                try {
+                    //Eingabefelder in GUI mit Speichern-Button verbinden
+                    String titel = jtTitelEingabe.getText();
+                    String genre = (String) comboGenre.getSelectedItem();
+                    boolean hatFortsetzung = cBoxFortsetzung.isSelected();
 
-                //Eingabefelder in GUI mit Speichern-Button verbinden
-                String titel = jtTitelEingabe.getText();
-                String genre = (String) comboGenre.getSelectedItem();
-                boolean hatFortsetzung = cBoxFortsetzung.isSelected();
+                    //Bewertung anhand ausgewählten RadioButtons festlegen
+                    if (buttonGroup.getSelection() == null) throw new Exception ("Bitte Buch bewerten"); // Sichergehen, dass ein radioButton ausgewählt wurde
+                    int bewertung = 0;
+                    if (rbtnEinStern.isSelected()) {
+                        bewertung = 1;
+                    } else if (rbtnZweiSterne.isSelected()) {
+                        bewertung = 2;
+                    } else if (rbtnDreiSterne.isSelected()) {
+                        bewertung = 3;
+                    } else if (rbtnVierSterne.isSelected()) {
+                        bewertung = 4;
+                    } else if (rbtnFünfSterne.isSelected()) {
+                        bewertung = 5;
+                    }
 
-                //Bewertung anhand ausgewählten RadioButtons festlegen
-                int bewertung = 0;
-                if (rbtnEinStern.isSelected()) {
-                    bewertung = 1;
-                } else if (rbtnZweiSterne.isSelected()) {
-                    bewertung = 2;
-                } else if (rbtnDreiSterne.isSelected()) {
-                    bewertung = 3;
-                } else if (rbtnVierSterne.isSelected()) {
-                    bewertung = 4;
-                } else if (rbtnFünfSterne.isSelected()) {
-                    bewertung = 5;
+                    //Neues Buch-Objekt erstellen (mt gesammelten Infos) + in Liste einfügen
+                    Buch neuesBuch = new Buch(titel, hatFortsetzung, genre, bewertung);
+                    buchListe.add(neuesBuch);
+
+                    //Felder prüfen --> Exceptions
+                    if (titel.isEmpty()) throw new Exception("Bitte gib einen Buchtitel ein");
+                    if (genre.isEmpty()) throw new Exception("Bitte wähle ein Genre aus");
+
+                    //prüfen ob Titel bereits existiert
+                    for (Buch b : buchListe) {
+                        if (b.getTitel().equals(titel)) {
+                            JOptionPane.showMessageDialog(null,"Dieses Buch ist bereits gespeichert");
+                        }
+                    }
+
+                    // Info-Fenster anzeigen als Bestätigung
+                    JOptionPane.showMessageDialog(null, "Buch gespeichert! ☺");
+
+                    jtTitelEingabe.setText("");
+                    cBoxFortsetzung.setSelected(false);
+                    comboGenre.setSelectedIndex(0);
+                    buttonGroup.clearSelection();
+
+
                 }
-                //Neues Buch-Objekt erstellen (mt gesammelten Infos) + in Liste einfügen
-                Buch neuesBuch = new Buch(titel, hatFortsetzung, genre, bewertung);
-                buchListe.add(neuesBuch);
-
-                // Info-Fenster anzeigen als Bestätigung
-                JOptionPane.showMessageDialog(null, "Buch gespeichert! ☺");
-
-                jtTitelEingabe.setText("");
-                cBoxFortsetzung.setSelected(false);
-                comboGenre.setSelectedIndex(0);
-                buttonGroup.clearSelection();
+                catch(Exception e1) {
+                    JOptionPane.showMessageDialog(null, e1.getMessage());
+                }
 
             }
         });
+
         btnListeAnzeigen.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //Booktopia listeAnzeigen = new Booktopia(buchListe);
-                Booktopia booktopiaFenster = new Booktopia(buchListe);
-                booktopiaFenster.setVisible(true);//***Benennung komisch? - ja etwas..BuchFilter/ BuecherListeFilter?
+                BuecherAusgabe buecherAusgabeFenster = new BuecherAusgabe(buchListe);
+                buecherAusgabeFenster.setVisible(true);//***Benennung komisch? - ja etwas..BuchFilter/ BuecherListeFilter?
             }
         });
     }
