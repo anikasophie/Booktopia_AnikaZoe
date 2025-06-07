@@ -12,11 +12,13 @@ import java.net.URI;
 public class BuecherAusgabe extends JFrame {
 
     private ArrayList<Buch> buchListe;
+    private ArrayList<Buch> ausgabeListe;
     private JTextArea jtAreaListe;
     private JPanel panelListe;
     private JComboBox<String> cBFilter;
     private JCheckBox cBAlphabetisch;
     private JLabel jlabelLink;
+
 
     //Konstruktor: bekommt Bücherliste übergeben
     public BuecherAusgabe(ArrayList<Buch> buchListe) {
@@ -45,7 +47,7 @@ public class BuecherAusgabe extends JFrame {
                 if (cBAlphabetisch.isSelected()) {
                     Collections.sort(buchListe, Comparator.comparing(Buch::getTitel));
 
-                    String text ="";
+                    String text = "";
                     for (Buch buch : buchListe) {
                         text = text + buch.toString() + "\n"; // Jede Buch Info anhängen
                     }
@@ -72,7 +74,7 @@ public class BuecherAusgabe extends JFrame {
     }
 
     private void zeigeListeAn(String filter) {
-        String text =""; // Platzhalter, hier wird gesamter Text im Filter für Liste zusammengesetzt
+        String text = ""; // Platzhalter, hier wird gesamter Text im Filter für Liste zusammengesetzt
 
         if (filter.contains("Alle")) {  //Filtert ob "Alle" in der ComboBox ausgewählt ist
             for (Buch buch : buchListe) {
@@ -84,7 +86,7 @@ public class BuecherAusgabe extends JFrame {
 
         if (filter.contains("3 oder mehr Sterne")) {  //Filtert ob "3 oder mehr Sterne" in der ComboBox ausgewählt ist
             for (Buch buch : buchListe) {
-                if(buch.getBewertung() >= 3){
+                if (buch.getBewertung() >= 3) {
                     text = text + buch.toString() + "\n";
 
                 }
@@ -95,7 +97,7 @@ public class BuecherAusgabe extends JFrame {
 
         if (filter.contains("4 oder mehr Sterne")) {  //Filtert ob "4 oder mehr Sterne" in der ComboBox ausgewählt ist
             for (Buch buch : buchListe) {
-                if(buch.getBewertung() >= 4){
+                if (buch.getBewertung() >= 4) {
                     text = text + buch.toString() + "\n";
                 }
             }
@@ -105,7 +107,7 @@ public class BuecherAusgabe extends JFrame {
 
         if (filter.contains("5 Sterne")) {  //Filtert ob "5 Sterne" in der ComboBox ausgewählt ist
             for (Buch buch : buchListe) {
-                if(buch.getBewertung() >= 5){
+                if (buch.getBewertung() >= 5) {
                     text = text + buch.toString() + "\n";
                 }
             }
@@ -115,7 +117,7 @@ public class BuecherAusgabe extends JFrame {
 
 
         for (Buch buch : buchListe) {  //nachdem schon geprüft wurde ob "Alle" oder eine Bewertung in der ComoboBox ausgewählt wurde, jetzt nur noch Genres möglich
-            if(buch.getGenre().equals(filter)){  //Filtern nach Genre
+            if (buch.getGenre().equals(filter)) {  //Filtern nach Genre
                 text = text + buch.toString() + "\n";
 
             }

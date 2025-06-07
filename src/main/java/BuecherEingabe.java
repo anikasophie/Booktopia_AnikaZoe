@@ -85,6 +85,18 @@ public class BuecherEingabe extends JFrame {
                         bewertung = 5;
                     }
 
+                    //prüfen ob Titel bereits existiert
+                    for (Buch b : buchListe) {
+                        if (b.getTitel().equals(titel)) {
+                            JOptionPane.showMessageDialog(null,"Dieses Buch ist bereits gespeichert");
+                            jtTitelEingabe.setText("");
+                            cBoxFortsetzung.setSelected(false);
+                            comboGenre.setSelectedIndex(0);
+                            buttonGroup.clearSelection();
+                            return;
+                        }
+                    }
+
                     //Neues Buch-Objekt erstellen (mt gesammelten Infos) + in Liste einfügen
                     Buch neuesBuch = new Buch(titel, hatFortsetzung, genre, bewertung);
                     buchListe.add(neuesBuch);
@@ -93,12 +105,6 @@ public class BuecherEingabe extends JFrame {
                     if (titel.isEmpty()) throw new Exception("Bitte gib einen Buchtitel ein");
                     if (genre.isEmpty()) throw new Exception("Bitte wähle ein Genre aus");
 
-                    //prüfen ob Titel bereits existiert
-                    for (Buch b : buchListe) {
-                        if (b.getTitel().equals(titel)) {
-                            JOptionPane.showMessageDialog(null,"Dieses Buch ist bereits gespeichert");
-                        }
-                    }
 
                     // Info-Fenster anzeigen als Bestätigung
                     JOptionPane.showMessageDialog(null, "Buch gespeichert! ☺");
