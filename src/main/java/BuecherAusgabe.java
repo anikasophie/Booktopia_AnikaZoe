@@ -1,9 +1,13 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.net.URI;
 
 public class BuecherAusgabe extends JFrame {
 
@@ -12,6 +16,7 @@ public class BuecherAusgabe extends JFrame {
     private JPanel panelListe;
     private JComboBox<String> cBFilter;
     private JCheckBox cBAlphabetisch;
+    private JLabel jlabelLink;
 
     //Konstruktor: bekommt Bücherliste übergeben
     public BuecherAusgabe(ArrayList<Buch> buchListe) {
@@ -45,6 +50,22 @@ public class BuecherAusgabe extends JFrame {
                         text = text + buch.toString() + "\n"; // Jede Buch Info anhängen
                     }
                     jtAreaListe.setText(text); // fertigen Text in jtArea einsetzen
+                }
+            }
+        });
+
+        /* Um Hyperlink hinzufügen: JLabel component muss erweitert + mouse listener erzeugt werden
+        --> Quelle: How to create hyperlink with JLabel in Java Swing (by Nam Ha Minh, CodeJava.net)*/
+
+        jlabelLink.setText("<html><a href=''>Hier klicken</a></html>");
+        jlabelLink.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        jlabelLink.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                try {
+                    Desktop.getDesktop().browse(new URI("https://www.thalia.de"));
+                } catch (Exception ex) {
+                    ex.printStackTrace();
                 }
             }
         });
