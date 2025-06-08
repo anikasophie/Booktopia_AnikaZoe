@@ -128,7 +128,7 @@ public class BuecherEingabe extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 //Booktopia listeAnzeigen = new Booktopia(buchListe);
                 BuecherAusgabe buecherAusgabeFenster = new BuecherAusgabe(buchListe);
-                buecherAusgabeFenster.setVisible(true);//***Benennung komisch? - ja etwas..BuchFilter/ BuecherListeFilter?
+                buecherAusgabeFenster.setVisible(true);
             }
         });
     }

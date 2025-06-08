@@ -19,6 +19,7 @@
         <properties>
           <background color="-5188361"/>
           <font size="20"/>
+          <foreground color="-12825735"/>
           <text value="☆"/>
         </properties>
       </component>
@@ -29,6 +30,7 @@
         <properties>
           <background color="-5188361"/>
           <font size="20"/>
+          <foreground color="-12825735"/>
           <text value="☆☆"/>
         </properties>
       </component>
@@ -39,6 +41,7 @@
         <properties>
           <background color="-5188361"/>
           <font size="20"/>
+          <foreground color="-12825735"/>
           <text value="☆☆☆"/>
         </properties>
       </component>
@@ -47,7 +50,7 @@
           <grid row="3" column="0" row-span="3" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <font name="Bookman Old Style" size="18" style="1"/>
+          <font name="Castellar" size="14" style="1"/>
           <foreground color="-12825735"/>
           <text value="Genre"/>
         </properties>
@@ -69,8 +72,8 @@
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <font name="Castellar" size="36" style="1"/>
-          <foreground color="-9333531"/>
+          <font name="Castellar" size="37" style="1"/>
+          <foreground color="-9597734"/>
           <text value="Booktopia"/>
         </properties>
       </component>
@@ -80,6 +83,8 @@
         </constraints>
         <properties>
           <background color="-5188361"/>
+          <font name="Bookman Old Style" size="14" style="1"/>
+          <foreground color="-12825735"/>
           <text value="Ist vorhanden"/>
         </properties>
       </component>
@@ -91,8 +96,8 @@
         </constraints>
         <properties>
           <background color="-6768680"/>
-          <font name="Bookman Old Style" size="18"/>
-          <foreground color="-13879489"/>
+          <font name="Bookman Old Style" size="15" style="0"/>
+          <foreground color="-12825735"/>
         </properties>
       </component>
       <component id="58726" class="javax.swing.JLabel">
@@ -100,7 +105,7 @@
           <grid row="1" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <font name="Bookman Old Style" size="18" style="1"/>
+          <font name="Castellar" size="14" style="1"/>
           <foreground color="-12825735"/>
           <text value="Titel"/>
         </properties>
@@ -110,7 +115,7 @@
           <grid row="2" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <font name="Bookman Old Style" size="18" style="1"/>
+          <font name="Castellar" size="14" style="1"/>
           <foreground color="-12825735"/>
           <text value="Fortsetzung"/>
         </properties>
@@ -120,7 +125,7 @@
           <grid row="6" column="0" row-span="1" col-span="4" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <font name="Bookman Old Style" size="18" style="1"/>
+          <font name="Castellar" size="14" style="1"/>
           <foreground color="-12825735"/>
           <text value="Bewertung"/>
         </properties>
@@ -133,7 +138,8 @@
           <background color="-6768680"/>
           <editable value="false"/>
           <enabled value="true"/>
-          <font name="Bookman Old Style" size="14"/>
+          <font name="Bookman Old Style" size="15" style="0"/>
+          <foreground color="-12825735"/>
           <model>
             <item value=""/>
             <item value="Fantasy"/>
@@ -152,6 +158,7 @@
         <properties>
           <background color="-5188361"/>
           <font size="20"/>
+          <foreground color="-12825735"/>
           <text value="☆☆☆☆☆"/>
         </properties>
       </component>
@@ -162,6 +169,7 @@
         <properties>
           <background color="-5188361"/>
           <font size="20"/>
+          <foreground color="-12825735"/>
           <text value="☆☆☆☆"/>
         </properties>
       </component>
@@ -171,7 +179,7 @@
         </constraints>
         <properties>
           <background color="-5188361"/>
-          <font name="Bookman Old Style" style="1"/>
+          <font name="Bookman Old Style" size="13" style="1"/>
           <foreground color="-7255732"/>
           <text value="Löschen"/>
         </properties>

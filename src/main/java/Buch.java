@@ -36,8 +36,7 @@ public class Buch {
     @Override
     public String toString(){
         //als lesbare Textzeile zurückgeben
-        return titel + " | Genre: " + genre +
-                " | Fortsetzung: " + (hatFortsetzung ? "Ja" : "Nein") +
+        return titel + " | Genre: " + genre + " | Fortsetzung: " + (hatFortsetzung ? "Ja" : "Nein") +
                 " | Bewertung: " + bewertung + "★";
     }
 
