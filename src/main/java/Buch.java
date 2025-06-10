@@ -2,13 +2,15 @@
 
 public class Buch {
     private String titel;
+    private String autor;
     private boolean hatFortsetzung;
     private String genre;
     private int bewertung;
 
     //Konstruktor
-    public Buch(String titel, boolean hatFortsetzung, String genre, int bewertung) {
+    public Buch(String titel, String autor, boolean hatFortsetzung, String genre, int bewertung) {
         this.titel = titel;
+        this.autor = autor;
         this.hatFortsetzung = hatFortsetzung;
         this.genre = genre;
         this.bewertung = bewertung;
@@ -18,6 +20,10 @@ public class Buch {
 
     public String getTitel() {
         return titel;
+    }
+
+    public String getAutor() {
+        return autor;
     }
 
     public boolean isHatFortsetzung() {
@@ -36,8 +42,8 @@ public class Buch {
     @Override
     public String toString(){
         //als lesbare Textzeile zurückgeben
-        return titel + " | Genre: " + genre + " | Fortsetzung: " + (hatFortsetzung ? "Ja" : "Nein") +
-                " | Bewertung: " + bewertung + "★";
+        return titel + " | " + autor + " | Genre: " + genre + " | Fortsetzung: " + (hatFortsetzung ? "Ja" : "Nein") +
+                " | Bewertung: " + bewertung + "★" + "\n";
     }
 
     public static void main(String[] args) {
