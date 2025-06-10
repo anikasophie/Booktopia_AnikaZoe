@@ -87,6 +87,12 @@ public class BuecherEingabe extends JFrame {
                         }
                     }
 
+
+                    //Felder prüfen --> Exceptions
+                    if (titel.isEmpty()) throw new Exception("Bitte gib einen Buchtitel ein");
+                    if (autor.isEmpty()) throw new Exception("Bitte gib einen Autor an");
+                    if (genre.isEmpty()) throw new Exception("Bitte wähle ein Genre aus");
+
                     //Bewertung anhand ausgewählten RadioButtons festlegen
                     if (buttonGroup.getSelection() == null)
                         throw new Exception("Bitte Buch bewerten"); // Sichergehen, dass ein radioButton ausgewählt wurde
@@ -102,12 +108,6 @@ public class BuecherEingabe extends JFrame {
                     } else if (rbtnFünfSterne.isSelected()) {
                         bewertung = 5;
                     }
-
-
-                    //Felder prüfen --> Exceptions
-                    if (titel.isEmpty()) throw new Exception("Bitte gib einen Buchtitel ein");
-                    if (autor.isEmpty()) throw new Exception("Bitte gib einen Autor an");
-                    if (genre.isEmpty()) throw new Exception("Bitte wähle ein Genre aus");
 
                     //Neues Buch-Objekt erstellen (mt gesammelten Infos) + in Liste einfügen
                     Buch neuesBuch = new Buch(titel, autor, hatFortsetzung, genre, bewertung);
