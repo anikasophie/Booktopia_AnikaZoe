@@ -28,6 +28,8 @@ public class BuecherAusgabe extends JFrame {
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);//nur dieses Fenster wird geschlossen, Rest vom Programm läuft weiter
         setSize(900, 600);
         setContentPane(panelListe);
+        ImageIcon icon = new ImageIcon(getClass().getResource("/Buch2.png"));
+        setIconImage(icon.getImage());
         setVisible(true);
         setResizable(true);
 

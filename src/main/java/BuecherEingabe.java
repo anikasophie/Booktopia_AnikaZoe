@@ -30,6 +30,8 @@ public class BuecherEingabe extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(900, 600);
         setContentPane(jpPanel);
+        ImageIcon icon = new ImageIcon(getClass().getResource("/Buch2.png"));
+        setIconImage(icon.getImage());
         setVisible(true);
         setResizable(true);
 
@@ -38,8 +40,8 @@ public class BuecherEingabe extends JFrame {
 
         // --> 3 Standardbücher hinzufügen
         buchListe.add(new Buch("Harry Potter", "J.K. Rowling", true, "Fantasy", 5));
-        buchListe.add(new Buch("Sherlock Holmes", "Arthur Conan Doyle", true, "Krimi", 4));
-        buchListe.add(new Buch("Grundkurs Java, 12. Aufl. ", "Dietmar Abts", false, "Fachliteratur", 5));
+        buchListe.add(new Buch("Neuschnee", "Lucy Foley", false, "Thriller", 3));
+        buchListe.add(new Buch("Grundkurs Java", "Dietmar Abts", false, "Sachbuch", 5));
 
         //--> Gruppierung der RadioButtons, sodass immer nur einer ausgewählt werden kann
         ButtonGroup buttonGroup = new ButtonGroup();
