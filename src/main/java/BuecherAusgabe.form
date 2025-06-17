@@ -31,11 +31,17 @@
           <foreground color="-10407848"/>
           <model>
             <item value="Alle"/>
+            <item value="Biografie"/>
+            <item value="Drama"/>
             <item value="Fantasy"/>
             <item value="Horror"/>
-            <item value="Romantik"/>
             <item value="Komödie"/>
-            <item value="Fachliteratur"/>
+            <item value="Krimi"/>
+            <item value="Lyrik"/>
+            <item value="Roman"/>
+            <item value="Sachbuch"/>
+            <item value="Science-Fiction"/>
+            <item value="Thriller"/>
             <item value="3 oder mehr Sterne"/>
             <item value="4 oder mehr Sterne"/>
             <item value="5 Sterne"/>

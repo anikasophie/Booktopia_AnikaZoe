@@ -30,8 +30,8 @@ public class BuecherEingabe extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(900, 600);
         setContentPane(jpPanel);
-        ImageIcon icon = new ImageIcon(getClass().getResource("/Buch2.png")); // Anleitung: ChatGpt
-        setIconImage(icon.getImage());
+        //ImageIcon icon = new ImageIcon(getClass().getResource("/Buch2.png")); // Anleitung: ChatGpt
+        //setIconImage(icon.getImage());
         setVisible(true);
         setResizable(true);
 

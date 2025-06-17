@@ -28,8 +28,8 @@ public class BuecherAusgabe extends JFrame {
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);//nur dieses Fenster wird geschlossen, Rest vom Programm läuft weiter
         setSize(900, 600);
         setContentPane(panelListe);
-        ImageIcon icon = new ImageIcon(getClass().getResource("/Buch2.png")); // Anleitung: ChatGpt
-        setIconImage(icon.getImage());
+        //ImageIcon icon = new ImageIcon(getClass().getResource("/Buch2.png")); // Anleitung: ChatGpt
+        //setIconImage(icon.getImage());
         setVisible(true);
         setResizable(true);
 
@@ -80,7 +80,7 @@ public class BuecherAusgabe extends JFrame {
 
         if (filter.contains("Alle")) {  //Filtert ob "Alle" in der ComboBox ausgewählt ist
             for (Buch buch : buchListe) {
-                text = text + buch.toString() + "\n\n"; // Jede Buch Info anhängen
+                text = text + buch.toString() + "\n"; // Jede Buch Info anhängen
             }
             jtAreaListe.setText(text); // fertigen Text in jtArea einsetzen
             return;
@@ -89,7 +89,7 @@ public class BuecherAusgabe extends JFrame {
         if (filter.contains("3 oder mehr Sterne")) {  //Filtert ob "3 oder mehr Sterne" in der ComboBox ausgewählt ist
             for (Buch buch : buchListe) {
                 if (buch.getBewertung() >= 3) {
-                    text = text + buch.toString() + "\n\n";
+                    text = text + buch.toString() + "\n";
 
                 }
             }
@@ -100,7 +100,7 @@ public class BuecherAusgabe extends JFrame {
         if (filter.contains("4 oder mehr Sterne")) {  //Filtert ob "4 oder mehr Sterne" in der ComboBox ausgewählt ist
             for (Buch buch : buchListe) {
                 if (buch.getBewertung() >= 4) {
-                    text = text + buch.toString() + "\n\n";
+                    text = text + buch.toString() + "\n";
                 }
             }
             jtAreaListe.setText(text);
@@ -110,7 +110,7 @@ public class BuecherAusgabe extends JFrame {
         if (filter.contains("5 Sterne")) {  //Filtert ob "5 Sterne" in der ComboBox ausgewählt ist
             for (Buch buch : buchListe) {
                 if (buch.getBewertung() >= 5) {
-                    text = text + buch.toString() + "\n\n";
+                    text = text + buch.toString() + "\n";
                 }
             }
             jtAreaListe.setText(text);
@@ -120,14 +120,9 @@ public class BuecherAusgabe extends JFrame {
 
         for (Buch buch : buchListe) {  //nachdem schon geprüft wurde ob "Alle" oder eine Bewertung in der ComoboBox ausgewählt wurde, jetzt nur noch Genres möglich
             if (buch.getGenre().equals(filter)) {  //Filtern nach Genre
-                text = text + buch.toString() + "\n\n";
+                text = text + buch.toString() + "\n";
 
             }
-//            else if (buchListe.isEmpty()) {
-//                jtAreaListe.setText("egwetwe"); //***hä was ist das hahaha
-//
-//            }
-
         }
         jtAreaListe.setText(text);
     }
