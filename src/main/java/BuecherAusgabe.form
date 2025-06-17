@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="BuecherAusgabe">
-  <grid id="27dc6" binding="panelListe" layout-manager="GridLayoutManager" row-count="9" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="panelListe" layout-manager="GridLayoutManager" row-count="20" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="10" left="10" bottom="10" right="10"/>
     <constraints>
-      <xy x="20" y="20" width="618" height="400"/>
+      <xy x="20" y="20" width="618" height="503"/>
     </constraints>
     <properties>
       <background color="-2707219"/>
@@ -21,36 +21,9 @@
           <text value="Booktopia"/>
         </properties>
       </component>
-      <component id="c1d34" class="javax.swing.JComboBox" binding="cBFilter">
-        <constraints>
-          <grid row="3" column="3" row-span="1" col-span="2" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <background color="-534273"/>
-          <font name="Bookman Old Style" size="15" style="0"/>
-          <foreground color="-10407848"/>
-          <model>
-            <item value="Alle"/>
-            <item value="Biografie"/>
-            <item value="Drama"/>
-            <item value="Fantasy"/>
-            <item value="Horror"/>
-            <item value="Komödie"/>
-            <item value="Krimi"/>
-            <item value="Lyrik"/>
-            <item value="Roman"/>
-            <item value="Sachbuch"/>
-            <item value="Science-Fiction"/>
-            <item value="Thriller"/>
-            <item value="3 oder mehr Sterne"/>
-            <item value="4 oder mehr Sterne"/>
-            <item value="5 Sterne"/>
-          </model>
-        </properties>
-      </component>
       <component id="f6a6d" class="javax.swing.JLabel">
         <constraints>
-          <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="19" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <font name="Castellar" size="12"/>
@@ -58,39 +31,9 @@
           <text value="Brauchst du neuen Lesestoff?"/>
         </properties>
       </component>
-      <component id="550dc" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="4" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <font name="Castellar" size="12" style="1"/>
-          <foreground color="-8504459"/>
-          <text value="Alphabetisch sortieren:"/>
-        </properties>
-      </component>
-      <component id="5e7d4" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="2" column="3" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <font name="Castellar" size="12" style="1"/>
-          <foreground color="-8504459"/>
-          <text value="Liste Filtern:"/>
-        </properties>
-      </component>
-      <component id="bb030" class="javax.swing.JCheckBox" binding="cBAlphabetisch">
-        <constraints>
-          <grid row="4" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <background color="-2707219"/>
-          <foreground color="-534273"/>
-          <text value=""/>
-        </properties>
-      </component>
       <component id="f95f1" class="javax.swing.JLabel" binding="jlabelLink">
         <constraints>
-          <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="19" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <background color="-10407848"/>
@@ -100,7 +43,7 @@
       </component>
       <scrollpane id="59ca0">
         <constraints>
-          <grid row="2" column="0" row-span="6" col-span="3" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false">
+          <grid row="2" column="0" row-span="17" col-span="3" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false">
             <preferred-size width="560" height="300"/>
           </grid>
         </constraints>
@@ -129,6 +72,70 @@
           <font name="Castellar" size="15" style="1"/>
           <foreground color="-8504459"/>
           <text value="Meine Bücher"/>
+        </properties>
+      </component>
+      <component id="5e7d4" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="10" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Castellar" size="12" style="1"/>
+          <foreground color="-8504459"/>
+          <text value="Liste Filtern:"/>
+        </properties>
+      </component>
+      <component id="550dc" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="5" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Castellar" size="12" style="1"/>
+          <foreground color="-8504459"/>
+          <text value="Alphabetisch sortieren:"/>
+        </properties>
+      </component>
+      <component id="bb030" class="javax.swing.JCheckBox" binding="cBAlphabetisch">
+        <constraints>
+          <grid row="5" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-2707219"/>
+          <foreground color="-534273"/>
+          <text value=""/>
+        </properties>
+      </component>
+      <component id="c1d34" class="javax.swing.JComboBox" binding="cBFilter">
+        <constraints>
+          <grid row="11" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-534273"/>
+          <font name="Bookman Old Style" size="15" style="0"/>
+          <foreground color="-10407848"/>
+          <model>
+            <item value="Alle"/>
+            <item value="Fantasy"/>
+            <item value="Horror"/>
+            <item value="Romantik"/>
+            <item value="Komödie"/>
+            <item value="Fachliteratur"/>
+            <item value="3 oder mehr Sterne"/>
+            <item value="4 oder mehr Sterne"/>
+            <item value="5 Sterne"/>
+          </model>
+        </properties>
+      </component>
+      <vspacer id="54544">
+        <constraints>
+          <grid row="12" column="3" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <component id="a81d7" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="7" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="  "/>
         </properties>
       </component>
     </children>

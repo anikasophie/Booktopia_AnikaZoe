@@ -31,7 +31,7 @@ public class BuecherEingabe extends JFrame {
         setSize(900, 600);
         setContentPane(jpPanel);
         //ImageIcon icon = new ImageIcon(getClass().getResource("/Buch2.png")); // Anleitung: ChatGpt
-        //setIconImage(icon.getImage());
+        //setIconImage(icon.getImage()); Bei Anika geht es nicht, wahrscheinlich weil das png nicht heruntergeladen ist?
         setVisible(true);
         setResizable(true);
 
