@@ -48,7 +48,7 @@ public class BuecherAusgabe extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 if (cBAlphabetisch.isSelected()) {
                     if (filterIstAktiv()) {
-                        Collections.sort(gefilterteListe, Comparator.comparing(buch -> buch.getTitel().toLowerCase())); //durch toLowerCase() wird nicht auf Groß- und Kleinschreibung geachtet (ChatGPT)
+                        gefilterteListe.sort(Comparator.comparing(buch -> buch.getTitel().toLowerCase())); //durch toLowerCase() wird nicht auf Groß- und Kleinschreibung geachtet (ChatGPT)
 
                         String text = "";
                         for (Buch buch : gefilterteListe) {
