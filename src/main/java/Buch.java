@@ -22,14 +22,6 @@ public class Buch {
         return titel;
     }
 
-    public String getAutor() {
-        return autor;
-    }
-
-    public boolean isHatFortsetzung() {
-        return hatFortsetzung;
-    }
-
     public String getGenre() {
         return genre;
     }
@@ -44,9 +36,5 @@ public class Buch {
         //als lesbare Textzeile zurückgeben
         return titel + " | " + autor + " | Genre: " + genre + " | Fortsetzung: " + (hatFortsetzung ? "Ja" : "Nein") +
                 " | Bewertung: " + bewertung + "★" + "\n";
-    }
-
-    public static void main(String[] args) {
-
     }
 }

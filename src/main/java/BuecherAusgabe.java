@@ -12,6 +12,7 @@ import java.net.URI;
 public class BuecherAusgabe extends JFrame {
 
     private ArrayList<Buch> buchListe;
+    private ArrayList<Buch> gefilterteListe = new ArrayList<>();
     private ArrayList<Buch> ausgabeListe;
     private JTextArea jtAreaListe;
     private JPanel panelListe;
@@ -28,33 +29,38 @@ public class BuecherAusgabe extends JFrame {
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);//nur dieses Fenster wird geschlossen, Rest vom Programm läuft weiter
         setSize(900, 600);
         setContentPane(panelListe);
-        //ImageIcon icon = new ImageIcon(getClass().getResource("/Buch2.png")); // Anleitung: ChatGpt
-        //setIconImage(icon.getImage());
         setVisible(true);
         setResizable(true);
 
         zeigeListeAn("Alle"); // Mehodenaufruf: Liste in jtArea anzeigen
 
+        filterIstAktiv();
+
 
         cBFilter.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String filter = cBFilter.getSelectedItem().toString();
-                zeigeListeAn(filter);
+                filterIstAktiv();
             }
         });
         cBAlphabetisch.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (cBAlphabetisch.isSelected()) {
-                    Collections.sort(buchListe, Comparator.comparing(Buch::getTitel));
+                    if (filterIstAktiv()) {
+                        Collections.sort(gefilterteListe, Comparator.comparing(buch -> buch.getTitel().toLowerCase())); //durch toLowerCase() wird nicht auf Groß- und Kleinschreibung geachtet (ChatGPT)
 
-                    String text = "";
-                    for (Buch buch : buchListe) {
-                        text = text + buch.toString() + "\n"; // Jede Buch Info anhängen
+                        String text = "";
+                        for (Buch buch : gefilterteListe) {
+                            text = text + buch.toString() + "\n"; // Jede Buch Info anhängen
+                        }
+                        jtAreaListe.setText(text); // fertigen Text in jtArea einsetzen
+                        gefilterteListe.clear();
                     }
-                    jtAreaListe.setText(text); // fertigen Text in jtArea einsetzen
+                } else {
+                    zeigeListeAn(cBFilter.getSelectedItem().toString());
                 }
+
             }
         });
 
@@ -89,6 +95,7 @@ public class BuecherAusgabe extends JFrame {
         if (filter.contains("3 oder mehr Sterne")) {  //Filtert ob "3 oder mehr Sterne" in der ComboBox ausgewählt ist
             for (Buch buch : buchListe) {
                 if (buch.getBewertung() >= 3) {
+                    gefilterteListe.add(buch);
                     text = text + buch.toString() + "\n";
 
                 }
@@ -100,6 +107,7 @@ public class BuecherAusgabe extends JFrame {
         if (filter.contains("4 oder mehr Sterne")) {  //Filtert ob "4 oder mehr Sterne" in der ComboBox ausgewählt ist
             for (Buch buch : buchListe) {
                 if (buch.getBewertung() >= 4) {
+                    gefilterteListe.add(buch);
                     text = text + buch.toString() + "\n";
                 }
             }
@@ -110,6 +118,7 @@ public class BuecherAusgabe extends JFrame {
         if (filter.contains("5 Sterne")) {  //Filtert ob "5 Sterne" in der ComboBox ausgewählt ist
             for (Buch buch : buchListe) {
                 if (buch.getBewertung() >= 5) {
+                    gefilterteListe.add(buch);
                     text = text + buch.toString() + "\n";
                 }
             }
@@ -119,12 +128,25 @@ public class BuecherAusgabe extends JFrame {
 
 
         for (Buch buch : buchListe) {  //nachdem schon geprüft wurde ob "Alle" oder eine Bewertung in der ComoboBox ausgewählt wurde, jetzt nur noch Genres möglich
-            if (buch.getGenre().equals(filter)) {  //Filtern nach Genre
+            if (buch.getGenre().equals(filter)) {
+                gefilterteListe.add(buch);//Filtern nach Genre
                 text = text + buch.toString() + "\n";
 
             }
+
         }
         jtAreaListe.setText(text);
+    }
+
+    private boolean filterIstAktiv() {
+        String filter = cBFilter.getSelectedItem().toString();
+        if (!filter.equals("Alle")) {
+            cBAlphabetisch.setEnabled(true);
+            return true;
+        }
+        cBAlphabetisch.setSelected(false);
+        cBAlphabetisch.setEnabled(false);
+        return false;
     }
 
 }

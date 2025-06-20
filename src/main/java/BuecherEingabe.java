@@ -25,20 +25,18 @@ public class BuecherEingabe extends JFrame {
 
 
     // KONSTRUKTOR
-    public BuecherEingabe() throws HeadlessException {
+    public BuecherEingabe() {
         setTitle("Büchereingabe"); //***Titel noch sehr unkreativ
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(900, 600);
         setContentPane(jpPanel);
-        //ImageIcon icon = new ImageIcon(getClass().getResource("/Buch2.png")); // Anleitung: ChatGpt
-        //setIconImage(icon.getImage()); Bei Anika geht es nicht, wahrscheinlich weil das png nicht heruntergeladen ist?
         setVisible(true);
         setResizable(true);
 
         // Liste leeren (Reset beim Start)
         buchListe.clear();
 
-        // --> 3 Standardbücher hinzufügen
+        // --> 3 Standardbücher hinzufügen InitObjekte!!!
         buchListe.add(new Buch("Harry Potter", "J.K. Rowling", true, "Fantasy", 5));
         buchListe.add(new Buch("Neuschnee", "Lucy Foley", false, "Thriller", 3));
         buchListe.add(new Buch("Grundkurs Java", "Dietmar Abts", false, "Sachbuch", 5));
