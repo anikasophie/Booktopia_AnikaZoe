@@ -13,7 +13,6 @@ public class BuecherAusgabe extends JFrame {
 
     private ArrayList<Buch> buchListe;
     private ArrayList<Buch> gefilterteListe = new ArrayList<>();
-    private ArrayList<Buch> ausgabeListe;
     private JTextArea jtAreaListe;
     private JPanel panelListe;
     private JComboBox<String> cBFilter;
@@ -36,13 +35,14 @@ public class BuecherAusgabe extends JFrame {
 
         filterIstAktiv();
 
-
         cBFilter.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                filterIstAktiv();
+                String filter = cBFilter.getSelectedItem().toString();
+                zeigeListeAn(filter);
             }
         });
+
         cBAlphabetisch.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -61,6 +61,13 @@ public class BuecherAusgabe extends JFrame {
                     zeigeListeAn(cBFilter.getSelectedItem().toString());
                 }
 
+            }
+        });
+
+        cBFilter.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                filterIstAktiv();
             }
         });
 
