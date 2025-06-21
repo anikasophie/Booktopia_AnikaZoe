@@ -74,9 +74,9 @@ public class BuecherEingabe extends JFrame {
                     String genre = (String) comboGenre.getSelectedItem();
                     boolean hatFortsetzung = cBoxFortsetzung.isSelected();
 
-                    //prüfen ob Titel bereits existiert
-                    for (Buch b : buchListe) {
-                        if (b.getTitel().equals(titel)) {
+                    //prüfen ob Titel bereits existiert, ohne Beachtung Groß-/Kleinschreibung
+                    for (Buch buch : buchListe) {
+                        if (buch.getTitel().toLowerCase().equals(titel)) {
                             JOptionPane.showMessageDialog(null, "Dieses Buch ist bereits gespeichert");
                             tfTitelEingabe.setText("");
                             tfAutor.setText("");

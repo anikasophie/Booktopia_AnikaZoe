@@ -77,16 +77,6 @@
           <text value="Meine Bücher"/>
         </properties>
       </component>
-      <component id="5e7d4" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="10" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <font name="Castellar" size="12" style="1"/>
-          <foreground color="-8504459"/>
-          <text value="Liste Filtern:"/>
-        </properties>
-      </component>
       <component id="550dc" class="javax.swing.JLabel">
         <constraints>
           <grid row="5" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
@@ -107,9 +97,28 @@
           <text value=""/>
         </properties>
       </component>
+      <component id="c3609" class="javax.swing.JLabel" binding="Icon">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <icon value="Lilabuch10.png"/>
+          <text value=""/>
+        </properties>
+      </component>
+      <component id="5e7d4" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="2" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Castellar" size="12" style="1"/>
+          <foreground color="-8504459"/>
+          <text value="Liste Filtern:"/>
+        </properties>
+      </component>
       <component id="c1d34" class="javax.swing.JComboBox" binding="cBFilter">
         <constraints>
-          <grid row="11" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="3" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <background color="-534273"/>
@@ -117,10 +126,17 @@
           <foreground color="-10407848"/>
           <model>
             <item value="Alle"/>
+            <item value="Biografie"/>
+            <item value="Drama"/>
             <item value="Fantasy"/>
             <item value="Horror"/>
-            <item value="Romantik"/>
             <item value="Komödie"/>
+            <item value="Krimi"/>
+            <item value="Lyrik"/>
+            <item value="Roman"/>
+            <item value="Sachbuch"/>
+            <item value="Science-Fiction"/>
+            <item value="Thriller"/>
             <item value="Fachliteratur"/>
             <item value="3 oder mehr Sterne"/>
             <item value="4 oder mehr Sterne"/>
@@ -128,26 +144,17 @@
           </model>
         </properties>
       </component>
-      <vspacer id="54544">
+      <vspacer id="62a78">
         <constraints>
-          <grid row="12" column="4" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+          <grid row="6" column="4" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
         </constraints>
       </vspacer>
-      <component id="a81d7" class="javax.swing.JLabel">
+      <component id="ac07b" class="javax.swing.JLabel">
         <constraints>
-          <grid row="7" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="4" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="  "/>
-        </properties>
-      </component>
-      <component id="c3609" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <icon value="Lilabuch10.png"/>
-          <text value=""/>
+          <text value=" "/>
         </properties>
       </component>
     </children>

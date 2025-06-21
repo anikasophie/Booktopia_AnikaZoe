@@ -18,6 +18,7 @@ public class BuecherAusgabe extends JFrame {
     private JComboBox<String> cBFilter;
     private JCheckBox cBAlphabetisch;
     private JLabel jlabelLink;
+    private JLabel Icon;
 
 
     //Konstruktor: bekommt Bücherliste übergeben
