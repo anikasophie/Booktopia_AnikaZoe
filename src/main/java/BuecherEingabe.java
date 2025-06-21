@@ -38,8 +38,11 @@ public class BuecherEingabe extends JFrame {
 
         // --> 3 Standardbücher hinzufügen InitObjekte!!!
         buchListe.add(new Buch("Harry Potter", "J.K. Rowling", true, "Fantasy", 5));
-        buchListe.add(new Buch("Neuschnee", "Lucy Foley", false, "Thriller", 3));
+        buchListe.add(new Buch("Neuschnee", "Lucy Foley", false, "Thriller", 2));
         buchListe.add(new Buch("Grundkurs Java", "Dietmar Abts", false, "Sachbuch", 5));
+        buchListe.add(new Buch("Faust", "Johann Wolfgang von Goethe", true, "Drama", 3));
+        buchListe.add(new Buch("Stolz und Vorurteil", "Jane Austen", false, "Roman", 4 ));
+
 
         //--> Gruppierung der RadioButtons, sodass immer nur einer ausgewählt werden kann
         ButtonGroup buttonGroup = new ButtonGroup();

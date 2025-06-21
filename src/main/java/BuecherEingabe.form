@@ -186,7 +186,7 @@
           <background color="-5188361"/>
           <font name="Bookman Old Style" size="13" style="1"/>
           <foreground color="-7255732"/>
-          <text value="Löschen"/>
+          <text value="Eingabe leeren"/>
         </properties>
       </component>
       <component id="37b44" class="javax.swing.JButton" binding="btnSpeichern">
