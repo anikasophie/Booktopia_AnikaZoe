@@ -43,8 +43,8 @@
       </component>
       <scrollpane id="59ca0">
         <constraints>
-          <grid row="2" column="1" row-span="17" col-span="3" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false">
-            <preferred-size width="560" height="300"/>
+          <grid row="2" column="1" row-span="16" col-span="3" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="560" height="240"/>
           </grid>
         </constraints>
         <properties>
@@ -56,9 +56,12 @@
             <constraints/>
             <properties>
               <background color="-534273"/>
+              <editable value="false"/>
+              <enabled value="true"/>
               <font name="Book Antiqua" size="14"/>
               <foreground color="-10407848"/>
               <lineWrap value="true"/>
+              <text value=""/>
               <wrapStyleWord value="true"/>
             </properties>
           </component>
