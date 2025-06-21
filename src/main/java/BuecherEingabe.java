@@ -1,5 +1,4 @@
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -15,12 +14,12 @@ public class BuecherEingabe extends JFrame {
     private JCheckBox cBoxFortsetzung;
     private JComboBox comboGenre;
     private JRadioButton rbtnEinStern;
-    private JButton btnLöschen;
+    private JButton btnEingabeLeeren;
     private JButton btnListeAnzeigen;
     private JRadioButton rbtnZweiSterne;
     private JRadioButton rbtnVierSterne;
     private JRadioButton rbtnDreiSterne;
-    private JRadioButton rbtnFünfSterne;
+    private JRadioButton rbtnFuenfSterne;
     private JButton btnSpeichern;
 
 
@@ -50,12 +49,12 @@ public class BuecherEingabe extends JFrame {
         buttonGroup.add(rbtnZweiSterne);
         buttonGroup.add(rbtnDreiSterne);
         buttonGroup.add(rbtnVierSterne);
-        buttonGroup.add(rbtnFünfSterne);
+        buttonGroup.add(rbtnFuenfSterne);
 
         //--> ActionListener
 
         //Löschen Button, Eingaben/Auswahl wieder wie bei Start
-        btnLöschen.addActionListener(new ActionListener() {
+        btnEingabeLeeren.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 tfTitelEingabe.setText("");
@@ -108,11 +107,11 @@ public class BuecherEingabe extends JFrame {
                         bewertung = 3;
                     } else if (rbtnVierSterne.isSelected()) {
                         bewertung = 4;
-                    } else if (rbtnFünfSterne.isSelected()) {
+                    } else if (rbtnFuenfSterne.isSelected()) {
                         bewertung = 5;
                     }
 
-                    //Neues Buch-Objekt erstellen (mt gesammelten Infos) + in Liste einfügen
+                    //Neues Buch-Objekt erstellen (mit gesammelten Infos) + in Liste einfügen
                     Buch neuesBuch = new Buch(titel, autor, hatFortsetzung, genre, bewertung);
                     buchListe.add(neuesBuch);
 

@@ -32,7 +32,7 @@ public class BuecherAusgabe extends JFrame {
         setVisible(true);
         setResizable(true);
 
-        zeigeListeAn("Alle"); // Mehodenaufruf: Liste in jtArea anzeigen
+        zeigeListeAn("Alle"); // Methodenaufruf: Liste in jtArea anzeigen
 
         filterIstAktiv();
 
@@ -53,7 +53,7 @@ public class BuecherAusgabe extends JFrame {
 
                         String text = "";
                         for (Buch buch : gefilterteListe) {
-                            text = text + buch.toString() + "\n"; // Jede Buch Info anhängen
+                            text = text + buch.toString() + "\n"; // Jede Buchinfo anhängen
                         }
                         jtAreaListe.setText(text); // fertigen Text in jtArea einsetzen
                         gefilterteListe.clear();
@@ -135,7 +135,7 @@ public class BuecherAusgabe extends JFrame {
         }
 
 
-        for (Buch buch : buchListe) {  //nachdem schon geprüft wurde ob "Alle" oder eine Bewertung in der ComoboBox ausgewählt wurde, jetzt nur noch Genres möglich
+        for (Buch buch : buchListe) {  //nachdem schon geprüft wurde ob "Alle" oder eine Bewertung in der ComboBox ausgewählt wurde, jetzt nur noch Genres möglich
             if (buch.getGenre().equals(filter)) {
                 gefilterteListe.add(buch);//Filtern nach Genre
                 text = text + buch.toString() + "\n";

@@ -156,7 +156,7 @@
           </model>
         </properties>
       </component>
-      <component id="1467f" class="javax.swing.JRadioButton" binding="rbtnFünfSterne">
+      <component id="1467f" class="javax.swing.JRadioButton" binding="rbtnFuenfSterne">
         <constraints>
           <grid row="8" column="7" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -178,7 +178,7 @@
           <text value="☆☆☆☆"/>
         </properties>
       </component>
-      <component id="4cc0e" class="javax.swing.JButton" binding="btnLöschen">
+      <component id="4cc0e" class="javax.swing.JButton" binding="btnEingabeLeeren">
         <constraints>
           <grid row="10" column="5" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
