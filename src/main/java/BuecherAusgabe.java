@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.net.URI;
 
@@ -17,23 +16,37 @@ public class BuecherAusgabe extends JFrame {
     private JPanel panelListe;
     private JComboBox<String> cBFilter;
     private JCheckBox cBAlphabetisch;
-    private JLabel jlabelLink;
-    private JLabel Icon;
+    private JLabel jlabelLink, Icon;
 
 
     //Konstruktor: bekommt Bücherliste übergeben
     public BuecherAusgabe(ArrayList<Buch> buchListe) {
         this.buchListe = buchListe;
 
-        setTitle("Liste"); //*** Kann man noch anpassen
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);//nur dieses Fenster wird geschlossen, Rest vom Programm läuft weiter
-        setSize(900, 600);
-        setContentPane(panelListe);
+        initWindow();
+        initComponents();
+        initListeners();
+        initLink();
+
+        zeigeListeAn("Alle"); // Anfangsanzeige
         setVisible(true);
-        setResizable(true);
+    }
+
+// Fenster Struktur
+private void initWindow() {
+    setTitle("Booktopia -Bücherliste");
+    setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);//nur dieses Fenster wird geschlossen, Rest vom Programm läuft weiter
+    setSize(900, 600);
+    setResizable(true);
+}
+
+private void initComponents() {
+        setContentPane(panelListe);
+    }
+
+private void initListeners(){
 
         zeigeListeAn("Alle"); // Methodenaufruf: Liste in jtArea anzeigen
-
         filterIstAktiv();
 
         cBFilter.addActionListener(new ActionListener() {
@@ -41,6 +54,7 @@ public class BuecherAusgabe extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 String filter = cBFilter.getSelectedItem().toString();
                 zeigeListeAn(filter);
+                filterIstAktiv(); // Hier schon Checkbox aktivieren/ deaktivieren (je nach Filter)
             }
         });
 
@@ -61,40 +75,34 @@ public class BuecherAusgabe extends JFrame {
                 } else {
                     zeigeListeAn(cBFilter.getSelectedItem().toString());
                 }
-
             }
         });
 
-        cBFilter.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                filterIstAktiv();
-            }
-        });
-
+}
         /* Um Hyperlink hinzufügen: JLabel component muss erweitert + mouse listener erzeugt werden
         --> Quelle: How to create hyperlink with JLabel in Java Swing (by Nam Ha Minh, CodeJava.net)*/
-
+private void initLink(){
         jlabelLink.setText("<html><a href=''>Hier klicken</a></html>");
-        jlabelLink.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        jlabelLink.setCursor(new Cursor(Cursor.HAND_CURSOR)); // Maus zeigt Hand an
         jlabelLink.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 try {
                     Desktop.getDesktop().browse(new URI("https://www.thalia.de"));
                 } catch (Exception ex) {
-                    ex.printStackTrace();
+                    ex.printStackTrace(); // Fehlermeldung falls z.B kein Browser installiert ist/ URI ungültig ist
                 }
             }
         });
-    }
+}
 
     private void zeigeListeAn(String filter) {
-        String text = ""; // Platzhalter, hier wird gesamter Text im Filter für Liste zusammengesetzt
+    gefilterteListe.clear(); // leere, damit keine alten Einträge drin bleiben
+    String text = ""; // Platzhalter, hier wird gesamter Text im Filter für Liste zusammengesetzt
 
         if (filter.contains("Alle")) {  //Filtert ob "Alle" in der ComboBox ausgewählt ist
             for (Buch buch : buchListe) {
-                text = text + buch.toString() + "\n"; // Jede Buch Info anhängen
+                text += buch.toString() + "\n"; // Jede Buch Info anhängen
             }
             jtAreaListe.setText(text); // fertigen Text in jtArea einsetzen
             return;
@@ -104,7 +112,7 @@ public class BuecherAusgabe extends JFrame {
             for (Buch buch : buchListe) {
                 if (buch.getBewertung() >= 3) {
                     gefilterteListe.add(buch);
-                    text = text + buch.toString() + "\n";
+                    text += buch.toString() + "\n";
 
                 }
             }
@@ -116,7 +124,7 @@ public class BuecherAusgabe extends JFrame {
             for (Buch buch : buchListe) {
                 if (buch.getBewertung() >= 4) {
                     gefilterteListe.add(buch);
-                    text = text + buch.toString() + "\n";
+                     text += buch.toString() + "\n";
                 }
             }
             jtAreaListe.setText(text);
@@ -127,7 +135,7 @@ public class BuecherAusgabe extends JFrame {
             for (Buch buch : buchListe) {
                 if (buch.getBewertung() >= 5) {
                     gefilterteListe.add(buch);
-                    text = text + buch.toString() + "\n";
+                    text += buch.toString() + "\n";
                 }
             }
             jtAreaListe.setText(text);
@@ -138,10 +146,9 @@ public class BuecherAusgabe extends JFrame {
         for (Buch buch : buchListe) {  //nachdem schon geprüft wurde ob "Alle" oder eine Bewertung in der ComboBox ausgewählt wurde, jetzt nur noch Genres möglich
             if (buch.getGenre().equals(filter)) {
                 gefilterteListe.add(buch);//Filtern nach Genre
-                text = text + buch.toString() + "\n";
+                text += buch.toString() + "\n";
 
             }
-
         }
         jtAreaListe.setText(text);
     }
