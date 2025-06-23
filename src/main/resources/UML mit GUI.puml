@@ -9,8 +9,6 @@ Legende:
 -: private Attribute/ Methoden
 +: öffentliche Methoden
 → Assoziation: Klasse verwendet/ enthält Objekte der Zielklasse
-- - > Abhängigkeit (Dependency): Klasse nutzt kurzfristig eine andere Klasse
-
 
 end note
 
@@ -69,8 +67,10 @@ class BuecherAusgabe <<GUI>> {
 }
 
 ' Beziehungen
-BuecherEingabe --> Buch       : «verwendet»\n(erzeugt Buch-Objekte)
-BuecherAusgabe --> Buch       : «verwendet»\n(zeigt Buch-Objekte)
-BuecherEingabe --> BuecherAusgabe : «öffnet»\n(öffnet Ausgabe-Fenster)
+BuecherEingabe "1" --> "0..*" Buch       : «verwendet»\n(erzeugt Buch-Objekte)
+BuecherAusgabe "1" --> "0..*" Buch       : «verwendet»\n(zeigt Objekte in Liste an)
+BuecherEingabe "1" --> "1" BuecherAusgabe : «öffnet»\n(öffnet Ausgabe-Fenster)
+
+
 
 @enduml
