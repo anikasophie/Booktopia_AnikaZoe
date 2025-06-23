@@ -6,7 +6,7 @@ Booktopia ist ein Java-Programm mit einer grafischen Oberfläche (GUI), in dem m
 
 
 ## UML-Diagramm
-![UML-Diagramm](resources/UMLmitGUI.png)
+![UML-Diagramm](src/main/resources/UMLmitGUI.png)
 
 
 ## Klassen und Methoden
