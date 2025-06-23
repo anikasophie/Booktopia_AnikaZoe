@@ -23,8 +23,7 @@ public class BuecherAusgabe extends JFrame {
     public BuecherAusgabe(ArrayList<Buch> buchListe) {
         this.buchListe = buchListe;
 
-        initWindow();
-        initComponents();
+        initGUI(); // Fenster Struktur
         initListeners();
         initLink();
 
@@ -32,17 +31,14 @@ public class BuecherAusgabe extends JFrame {
         setVisible(true);
     }
 
-// Fenster Struktur
-private void initWindow() {
+
+private void initGUI() {
     setTitle("Booktopia -Bücherliste");
     setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);//nur dieses Fenster wird geschlossen, Rest vom Programm läuft weiter
+    setContentPane(panelListe);
     setSize(900, 600);
     setResizable(true);
 }
-
-private void initComponents() {
-        setContentPane(panelListe);
-    }
 
 private void initListeners(){
 

@@ -22,21 +22,28 @@ public class BuecherEingabe extends JFrame {
     private JRadioButton rbtnFuenfSterne;
     private JButton btnSpeichern;
 
+    // Klassenattribut: ButtonGroup
+    private ButtonGroup buttonGroup;
+
 
     // KONSTRUKTOR
     public BuecherEingabe() {
-        setTitle("Büchereingabe"); //***Titel noch sehr unkreativ
+        initGUI(); //GUI-Grundstruktur
+        buchListe.clear(); // Liste leeren (Reset beim Start)
+        initObjekte(); //Standardbücher
+        gruppiereRadioButtons(); // Damit nur einer wählbar ist
+        setzeListener();
+    }
+
+    private void initGUI(){
+        setTitle("Booktopia - Büchereingabe");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(900, 600);
         setContentPane(jpPanel);
         setVisible(true);
         setResizable(true);
-
-        // Liste leeren (Reset beim Start)
-        buchListe.clear();
-
-        initObjekte();
-
+}
+ private void gruppiereRadioButtons(){
         //--> Gruppierung der RadioButtons, sodass immer nur einer ausgewählt werden kann
         ButtonGroup buttonGroup = new ButtonGroup();
         buttonGroup.add(rbtnEinStern);
@@ -44,10 +51,11 @@ public class BuecherEingabe extends JFrame {
         buttonGroup.add(rbtnDreiSterne);
         buttonGroup.add(rbtnVierSterne);
         buttonGroup.add(rbtnFuenfSterne);
+}
 
-        //--> ActionListener
-
-        //Löschen Button, Eingaben/Auswahl wieder wie bei Start
+private void setzeListener(){
+        //--> ActionListener für alle Buttons
+        //"Eingabe leeren" setzt Eingabefelder zurück
         btnEingabeLeeren.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -59,39 +67,38 @@ public class BuecherEingabe extends JFrame {
             }
         });
 
-        //Speichern Button
+        //Speichern Button (liest Eingaben aus, fügt neues Buch hinzu)
         btnSpeichern.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    //Eingabefelder in GUI mit Speichern-Button verbinden
+                    //Eingaben auslesen
                     String titel = tfTitelEingabe.getText();
                     String autor = tfAutor.getText();
                     String genre = (String) comboGenre.getSelectedItem();
                     boolean hatFortsetzung = cBoxFortsetzung.isSelected();
 
-                    //prüfen ob Titel bereits existiert, ohne Beachtung Groß-/Kleinschreibung
+                    // Prüfen ob Titel bereits existiert, ohne Beachtung Groß-/Kleinschreibung
                     for (Buch buch : buchListe) {
                         if (buch.getTitel().toLowerCase().equals(titel)) {
                             JOptionPane.showMessageDialog(null, "Dieses Buch ist bereits gespeichert");
+                            // Eingabefelder zurücksetzen
                             tfTitelEingabe.setText("");
                             tfAutor.setText("");
                             cBoxFortsetzung.setSelected(false);
                             comboGenre.setSelectedIndex(0);
                             buttonGroup.clearSelection();
-                            return;
+                            return; // erst mal nicht speichern
                         }
                     }
 
-
-                    //Felder prüfen --> Exceptions
+                    //prüfen, ob alle Angaben gemacht wurden --> Exceptions
                     if (titel.isEmpty()) throw new Exception("Bitte gib einen Buchtitel ein");
                     if (autor.isEmpty()) throw new Exception("Bitte gib einen Autor an");
                     if (genre.isEmpty()) throw new Exception("Bitte wähle ein Genre aus");
+                    if (buttonGroup.getSelection() == null) throw new Exception("Bitte Buch bewerten");
 
-                    //Bewertung anhand ausgewählten RadioButtons festlegen
-                    if (buttonGroup.getSelection() == null)
-                        throw new Exception("Bitte Buch bewerten"); // Sichergehen, dass ein radioButton ausgewählt wurde
+                    //Bewertung anhand ausgewählten RadioButtons bestimmen
                     int bewertung = 0;
                     if (rbtnEinStern.isSelected()) {
                         bewertung = 1;
@@ -105,7 +112,7 @@ public class BuecherEingabe extends JFrame {
                         bewertung = 5;
                     }
 
-                    //Neues Buch-Objekt erstellen (mit gesammelten Infos) + in Liste einfügen
+                    //Neues Buch-Objekt erstellen (mit gesammelten Infos) + in Liste speichern
                     Buch neuesBuch = new Buch(titel, autor, hatFortsetzung, genre, bewertung);
                     buchListe.add(neuesBuch);
 
@@ -113,6 +120,7 @@ public class BuecherEingabe extends JFrame {
                     // Info-Fenster anzeigen als Bestätigung
                     JOptionPane.showMessageDialog(null, "Buch gespeichert! ☺");
 
+                    // Eingabefelder zurücksetzen für nächstes Buch
                     tfTitelEingabe.setText("");
                     tfAutor.setText("");
                     cBoxFortsetzung.setSelected(false);
@@ -121,12 +129,14 @@ public class BuecherEingabe extends JFrame {
 
 
                 } catch (Exception e1) {
+                    // Fehlermeldung bei ungültigen Eingaben
                     JOptionPane.showMessageDialog(null, e1.getMessage());
                 }
 
             }
         });
 
+        // "Liste anzeigen" öffnet 2. Fenster
         btnListeAnzeigen.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -151,8 +161,6 @@ public class BuecherEingabe extends JFrame {
         buchListe.add(b4);
         buchListe.add(b5);
     }
-
-
 
     public static void main(String[] args) {
         BuecherEingabe buecherEingabe = new BuecherEingabe();
