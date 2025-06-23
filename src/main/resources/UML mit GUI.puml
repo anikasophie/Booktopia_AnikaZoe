@@ -1,0 +1,76 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+' Legende als Notiz
+note as L1
+Legende:
+
+ Klassen mit «GUI»: grafische Benutzeroberfläche (Swing)
+-: private Attribute/ Methoden
++: öffentliche Methoden
+→ Assoziation: Klasse verwendet/ enthält Objekte der Zielklasse
+- - > Abhängigkeit (Dependency): Klasse nutzt kurzfristig eine andere Klasse
+
+
+end note
+
+class Buch {
+  - titel: String
+  - autor: String
+  - hatFortsetzung: boolean
+  - genre: String
+  - bewertung: int
+  --
+  + Buch(titel, autor, hatFortsetzung, genre, bewertung)
+  + getTitel(): String
+  + getGenre(): String
+  + getBewertung(): int
+  + toString(): String
+}
+
+class BuecherEingabe <<GUI>> {
+  - buchListe: ArrayList<Buch>
+  - jpPanel: JPanel
+  - tfTitelEingabe: JTextField
+  - tfAutor: JTextField
+  - cBoxFortsetzung: JCheckBox
+  - comboGenre: JComboBox
+  - rbtnEinStern: JRadioButton
+  - rbtnZweiSterne: JRadioButton
+  - rbtnDreiSterne: JRadioButton
+  - rbtnVierSterne: JRadioButton
+  - rbtnFuenfSterne: JRadioButton
+  - btnEingabeLeeren: JButton
+  - btnSpeichern: JButton
+  - btnListeAnzeigen: JButton
+  --
+  + BuecherEingabe()
+  + main(args: String[]): void
+  + initObjekte(): void
+}
+
+class BuecherAusgabe <<GUI>> {
+  - buchListe: ArrayList<Buch>
+  - gefilterteListe: ArrayList<Buch>
+  - jtAreaListe: JTextArea
+  - panelListe: JPanel
+  - cBFilter: JComboBox<String>
+  - cBAlphabetisch: JCheckBox
+  - jlabelLink: JLabel
+  - Icon: JLabel
+  --
+  + BuecherAusgabe(buchListe: ArrayList<Buch>)
+  - initWindow(): void
+  - initComponents(): void
+  - initListeners(): void
+  - initLink(): void
+  - zeigeListeAn(filter: String): void
+  - filterIstAktiv(): boolean
+}
+
+' Beziehungen
+BuecherEingabe --> Buch       : «verwendet»\n(erzeugt Buch-Objekte)
+BuecherAusgabe --> Buch       : «verwendet»\n(zeigt Buch-Objekte)
+BuecherEingabe --> BuecherAusgabe : «öffnet»\n(öffnet Ausgabe-Fenster)
+
+@enduml
