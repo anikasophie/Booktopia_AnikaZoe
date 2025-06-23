@@ -102,7 +102,7 @@ private void initLink(){
 
         if (filter.contains("Alle")) {  //Filtert ob "Alle" in der ComboBox ausgewählt ist
             for (Buch buch : buchListe) {
-                text += buch.toString() + "\n"; // Jede Buch Info anhängen
+                text += buch + "\n"; // Jede Buch Info anhängen
             }
             jtAreaListe.setText(text); // fertigen Text in jtArea einsetzen
             return;
