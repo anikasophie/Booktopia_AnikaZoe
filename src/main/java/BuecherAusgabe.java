@@ -112,7 +112,7 @@ private void initLink(){
             for (Buch buch : buchListe) {
                 if (buch.getBewertung() >= 3) {
                     gefilterteListe.add(buch);
-                    text += buch.toString() + "\n";
+                    text += buch + "\n";
 
                 }
             }
@@ -124,7 +124,7 @@ private void initLink(){
             for (Buch buch : buchListe) {
                 if (buch.getBewertung() >= 4) {
                     gefilterteListe.add(buch);
-                     text += buch.toString() + "\n";
+                     text += buch + "\n";
                 }
             }
             jtAreaListe.setText(text);
@@ -135,7 +135,7 @@ private void initLink(){
             for (Buch buch : buchListe) {
                 if (buch.getBewertung() >= 5) {
                     gefilterteListe.add(buch);
-                    text += buch.toString() + "\n";
+                    text += buch + "\n";
                 }
             }
             jtAreaListe.setText(text);
@@ -146,7 +146,7 @@ private void initLink(){
         for (Buch buch : buchListe) {  //nachdem schon geprüft wurde ob "Alle" oder eine Bewertung in der ComboBox ausgewählt wurde, jetzt nur noch Genres möglich
             if (buch.getGenre().equals(filter)) {
                 gefilterteListe.add(buch);//Filtern nach Genre
-                text += buch.toString() + "\n";
+                text += buch + "\n";
 
             }
         }

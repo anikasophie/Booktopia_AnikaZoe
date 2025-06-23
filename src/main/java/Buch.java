@@ -30,6 +30,7 @@ public class Buch {
         return bewertung;
     }
 
+
     // toString-Methode um Standard-Ausgabe (z.B Buch@1831b) zu überschreiben
     @Override
     public String toString(){
