@@ -1,12 +1,13 @@
 # Booktopia - Dein digitales Bücherregal
-## SOSE 2025, Programmiertechnik - Prof. Dr.Ing. Meyer
+#### SOSE 2025, Programmiertechnik - Prof. Dr.Ing. Meyer
 
 ## Projektbeschreibung
 Booktopia ist ein Java-Programm mit einer grafischen Oberfläche (GUI), in dem man Bücher speichern und anzeigen lassen kann. Man kann neue Bücher hinzufügen, nach Genre und Bewertung filtern und die Liste alphabetisch sortieren. Die Oberfläche wurde mit Java Swing gebaut.
 
 
 ## UML-Diagramm
-![UML Diagramm](docs/uml_diagramm.png)
+![UML-Diagramm](resources/UMLmitGUI.png)
+
 
 ## Klassen und Methoden
 
