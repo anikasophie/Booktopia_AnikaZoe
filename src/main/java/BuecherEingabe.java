@@ -3,9 +3,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-public class BuecherEingabe extends JFrame {
-    private ArrayList<Buch> buchListe = new ArrayList<>();
 
+public class BuecherEingabe extends JFrame {
 
     // GUI-Setup
     private JPanel jpPanel;
@@ -22,9 +21,6 @@ public class BuecherEingabe extends JFrame {
     private JRadioButton rbtnFuenfSterne;
     private JButton btnSpeichern;
 
-    // Klassenattribut: ButtonGroup
-    private ButtonGroup buttonGroup;
-
 
     // KONSTRUKTOR
     public BuecherEingabe() {
@@ -35,26 +31,52 @@ public class BuecherEingabe extends JFrame {
         setzeListener();
     }
 
-    private void initGUI(){
+
+    private void initGUI() {
         setTitle("Booktopia - Büchereingabe");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(900, 600);
         setContentPane(jpPanel);
         setVisible(true);
         setResizable(true);
-}
- private void gruppiereRadioButtons(){
+    }
+
+
+    private ArrayList<Buch> buchListe = new ArrayList<>();
+
+    // --> 3 Standardbücher hinzufügen
+    public void initObjekte() {
+        Buch b1 = new Buch("Harry Potter", "J.K. Rowling", true, "Fantasy", 5);
+        Buch b2 = new Buch("Neuschnee", "Lucy Foley", false, "Thriller", 2);
+        Buch b3 = new Buch("Grundkurs Java", "Dietmar Abts", false, "Sachbuch", 5);
+        Buch b4 = new Buch("Faust", "Johann Wolfgang von Goethe", true, "Drama", 3);
+        Buch b5 = new Buch("Stolz und Vorurteil", "Jane Austen", false, "Roman", 4);
+
+        buchListe.add(b1);
+        buchListe.add(b2);
+        buchListe.add(b3);
+        buchListe.add(b4);
+        buchListe.add(b5);
+    }
+
+
+    // Klassenattribut: ButtonGroup
+    private ButtonGroup buttonGroup;
+
+    private void gruppiereRadioButtons() {
         //--> Gruppierung der RadioButtons, sodass immer nur einer ausgewählt werden kann
-        ButtonGroup buttonGroup = new ButtonGroup();
+        buttonGroup = new ButtonGroup();
         buttonGroup.add(rbtnEinStern);
         buttonGroup.add(rbtnZweiSterne);
         buttonGroup.add(rbtnDreiSterne);
         buttonGroup.add(rbtnVierSterne);
         buttonGroup.add(rbtnFuenfSterne);
-}
+    }
 
-private void setzeListener(){
+
+    private void setzeListener() {
         //--> ActionListener für alle Buttons
+
         //"Eingabe leeren" setzt Eingabefelder zurück
         btnEingabeLeeren.addActionListener(new ActionListener() {
             @Override
@@ -98,7 +120,7 @@ private void setzeListener(){
                     if (genre.isEmpty()) throw new Exception("Bitte wähle ein Genre aus");
                     if (buttonGroup.getSelection() == null) throw new Exception("Bitte Buch bewerten");
 
-                    //Bewertung anhand ausgewählten RadioButtons bestimmen
+                    //Bewertung anhand der ausgewählten RadioButtons bestimmen
                     int bewertung = 0;
                     if (rbtnEinStern.isSelected()) {
                         bewertung = 1;
@@ -116,7 +138,6 @@ private void setzeListener(){
                     Buch neuesBuch = new Buch(titel, autor, hatFortsetzung, genre, bewertung);
                     buchListe.add(neuesBuch);
 
-
                     // Info-Fenster anzeigen als Bestätigung
                     JOptionPane.showMessageDialog(null, "Buch gespeichert! ☺");
 
@@ -127,12 +148,10 @@ private void setzeListener(){
                     comboGenre.setSelectedIndex(0);
                     buttonGroup.clearSelection();
 
-
                 } catch (Exception e1) {
                     // Fehlermeldung bei ungültigen Eingaben
                     JOptionPane.showMessageDialog(null, e1.getMessage());
                 }
-
             }
         });
 
@@ -147,20 +166,6 @@ private void setzeListener(){
         });
     }
 
-    // --> 3 Standardbücher hinzufügen
-    public void initObjekte() {
-        Buch b1 = new Buch("Harry Potter", "J.K. Rowling", true, "Fantasy", 5);
-        Buch b2 = new Buch("Neuschnee", "Lucy Foley", false, "Thriller", 2);
-        Buch b3 = new Buch("Grundkurs Java", "Dietmar Abts", false, "Sachbuch", 5);
-        Buch b4 = new Buch("Faust", "Johann Wolfgang von Goethe", true, "Drama", 3);
-        Buch b5 = new Buch("Stolz und Vorurteil", "Jane Austen", false, "Roman", 4);
-
-        buchListe.add(b1);
-        buchListe.add(b2);
-        buchListe.add(b3);
-        buchListe.add(b4);
-        buchListe.add(b5);
-    }
 
     public static void main(String[] args) {
         BuecherEingabe buecherEingabe = new BuecherEingabe();

@@ -31,7 +31,7 @@
           <text value="Brauchst du neuen Lesestoff?"/>
         </properties>
       </component>
-      <component id="f95f1" class="javax.swing.JLabel" binding="jlabelLink">
+      <component id="f95f1" class="javax.swing.JLabel" binding="jLabelLink">
         <constraints>
           <grid row="19" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -87,7 +87,7 @@
           <text value="Alphabetisch sortieren:"/>
         </properties>
       </component>
-      <component id="bb030" class="javax.swing.JCheckBox" binding="cBAlphabetisch">
+      <component id="bb030" class="javax.swing.JCheckBox" binding="cBoxAlphabetisch">
         <constraints>
           <grid row="5" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -116,7 +116,7 @@
           <text value="Liste Filtern:"/>
         </properties>
       </component>
-      <component id="c1d34" class="javax.swing.JComboBox" binding="cBFilter">
+      <component id="c1d34" class="javax.swing.JComboBox" binding="ComboFilter">
         <constraints>
           <grid row="3" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>

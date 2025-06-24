@@ -8,15 +8,17 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.net.URI;
 
+
 public class BuecherAusgabe extends JFrame {
+
+    private JTextArea jtAreaListe;
+    private JPanel panelListe;
+    private JComboBox<String> ComboFilter;
+    private JCheckBox cBoxAlphabetisch;
+    private JLabel jLabelLink, Icon;
 
     private ArrayList<Buch> buchListe;
     private ArrayList<Buch> gefilterteListe = new ArrayList<>();
-    private JTextArea jtAreaListe;
-    private JPanel panelListe;
-    private JComboBox<String> cBFilter;
-    private JCheckBox cBAlphabetisch;
-    private JLabel jlabelLink, Icon;
 
 
     //Konstruktor: bekommt Bücherliste übergeben
@@ -32,32 +34,33 @@ public class BuecherAusgabe extends JFrame {
     }
 
 
-private void initGUI() {
-    setTitle("Booktopia -Bücherliste");
-    setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);//nur dieses Fenster wird geschlossen, Rest vom Programm läuft weiter
-    setContentPane(panelListe);
-    setSize(900, 600);
-    setResizable(true);
-}
+    private void initGUI() {
+        setTitle("Booktopia -Bücherliste");
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);//nur dieses Fenster wird geschlossen, Rest vom Programm läuft weiter
+        setContentPane(panelListe);
+        setSize(900, 600);
+        setResizable(true);
+    }
 
-private void initListeners(){
+
+    private void initListeners() {
 
         zeigeListeAn("Alle"); // Methodenaufruf: Liste in jtArea anzeigen
         filterIstAktiv();
 
-        cBFilter.addActionListener(new ActionListener() {
+        ComboFilter.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String filter = cBFilter.getSelectedItem().toString();
+                String filter = ComboFilter.getSelectedItem().toString();
                 zeigeListeAn(filter);
-                filterIstAktiv(); // Hier schon Checkbox aktivieren/ deaktivieren (je nach Filter)
+                filterIstAktiv(); // Checkbox aktivieren/deaktivieren (je nach Filter)
             }
         });
 
-        cBAlphabetisch.addActionListener(new ActionListener() {
+        cBoxAlphabetisch.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (cBAlphabetisch.isSelected()) {
+                if (cBoxAlphabetisch.isSelected()) {
                     if (filterIstAktiv()) {
                         gefilterteListe.sort(Comparator.comparing(buch -> buch.getTitel().toLowerCase())); //durch toLowerCase() wird nicht auf Groß- und Kleinschreibung geachtet (ChatGPT)
 
@@ -69,36 +72,19 @@ private void initListeners(){
                         gefilterteListe.clear();
                     }
                 } else {
-                    zeigeListeAn(cBFilter.getSelectedItem().toString());
+                    zeigeListeAn(ComboFilter.getSelectedItem().toString());
                 }
             }
         });
-
-}
-        /* Um Hyperlink hinzufügen: JLabel component muss erweitert + mouse listener erzeugt werden
-        --> Quelle: How to create hyperlink with JLabel in Java Swing (by Nam Ha Minh, CodeJava.net)*/
-private void initLink(){
-        jlabelLink.setText("<html><a href=''>Hier klicken</a></html>");
-        jlabelLink.setCursor(new Cursor(Cursor.HAND_CURSOR)); // Maus zeigt Hand an
-        jlabelLink.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                try {
-                    Desktop.getDesktop().browse(new URI("https://www.thalia.de"));
-                } catch (Exception ex) {
-                    ex.printStackTrace(); // Fehlermeldung falls z.B kein Browser installiert ist/ URI ungültig ist
-                }
-            }
-        });
-}
+    }
 
     private void zeigeListeAn(String filter) {
-    gefilterteListe.clear(); // leere, damit keine alten Einträge drin bleiben
-    String text = ""; // Platzhalter, hier wird gesamter Text im Filter für Liste zusammengesetzt
+        gefilterteListe.clear(); // leere, damit keine alten Einträge drin bleiben
+        String text = ""; // Platzhalter, hier wird gesamter Text im Filter für Liste zusammengesetzt
 
         if (filter.contains("Alle")) {  //Filtert ob "Alle" in der ComboBox ausgewählt ist
             for (Buch buch : buchListe) {
-                text += buch + "\n"; // Jede Buch Info anhängen
+                text += buch + "\n"; // Jede Buch-Info anhängen
             }
             jtAreaListe.setText(text); // fertigen Text in jtArea einsetzen
             return;
@@ -120,7 +106,7 @@ private void initLink(){
             for (Buch buch : buchListe) {
                 if (buch.getBewertung() >= 4) {
                     gefilterteListe.add(buch);
-                     text += buch + "\n";
+                    text += buch + "\n";
                 }
             }
             jtAreaListe.setText(text);
@@ -138,7 +124,6 @@ private void initLink(){
             return;
         }
 
-
         for (Buch buch : buchListe) {  //nachdem schon geprüft wurde ob "Alle" oder eine Bewertung in der ComboBox ausgewählt wurde, jetzt nur noch Genres möglich
             if (buch.getGenre().equals(filter)) {
                 gefilterteListe.add(buch);//Filtern nach Genre
@@ -150,15 +135,32 @@ private void initLink(){
     }
 
     private boolean filterIstAktiv() {
-        String filter = cBFilter.getSelectedItem().toString();
+        String filter = ComboFilter.getSelectedItem().toString();
         if (!filter.equals("Alle")) {
-            cBAlphabetisch.setEnabled(true);
+            cBoxAlphabetisch.setEnabled(true);
             return true;
         }
-        cBAlphabetisch.setSelected(false);
-        cBAlphabetisch.setEnabled(false);
+        cBoxAlphabetisch.setSelected(false);
+        cBoxAlphabetisch.setEnabled(false);
         return false;
     }
 
+
+    /* Um Hyperlink hinzufügen: JLabel component muss erweitert + mouse listener erzeugt werden
+    --> Quelle: How to create hyperlink with JLabel in Java Swing (by Nam Ha Minh, CodeJava.net)*/
+    private void initLink() {
+        jLabelLink.setText("<html><a href=''>Hier klicken</a></html>");
+        jLabelLink.setCursor(new Cursor(Cursor.HAND_CURSOR)); // Maus zeigt Hand an
+        jLabelLink.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                try {
+                    Desktop.getDesktop().browse(new URI("https://www.thalia.de"));
+                } catch (Exception ex) {
+                    ex.printStackTrace(); // Fehlermeldung, falls z.B. kein Browser installiert / URI ungültig ist
+                }
+            }
+        });
+    }
 }
 

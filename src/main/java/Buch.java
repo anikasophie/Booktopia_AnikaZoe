@@ -16,24 +16,21 @@ public class Buch {
         this.bewertung = bewertung;
     }
 
-    // Getter (um von außen auf Variaben zuzugreifen)
-
+    // Getter (um von außen auf Variablen zuzugreifen)
     public String getTitel() {
         return titel;
     }
-
     public String getGenre() {
         return genre;
     }
-
     public int getBewertung() {
         return bewertung;
     }
 
 
-    // toString-Methode um Standard-Ausgabe (z.B Buch@1831b) zu überschreiben
+    // toString-Methode um Standard-Ausgabe (z.B. Buch@1831b) zu überschreiben
     @Override
-    public String toString(){
+    public String toString() {
         //als lesbare Textzeile zurückgeben
         return titel + " | " + autor + " | Genre: " + genre + " | Fortsetzung: " + (hatFortsetzung ? "Ja" : "Nein") +
                 " | Bewertung: " + bewertung + "★" + "\n";
