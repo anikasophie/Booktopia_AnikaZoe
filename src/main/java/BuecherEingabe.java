@@ -46,7 +46,7 @@ public class BuecherEingabe extends JFrame {
 
     // --> 3 Standardbücher hinzufügen
     public void initObjekte() {
-        Buch b1 = new Buch("Harry Potter", "J.K. Rowling", true, "Fantasy", 5);
+        Buch b1 = new Buch("Der kleine Hobbit", "J.R.R. Tolkien", true, "Fantasy", 5);
         Buch b2 = new Buch("Neuschnee", "Lucy Foley", false, "Thriller", 2);
         Buch b3 = new Buch("Grundkurs Java", "Dietmar Abts", false, "Sachbuch", 5);
         Buch b4 = new Buch("Faust", "Johann Wolfgang von Goethe", true, "Drama", 3);
