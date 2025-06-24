@@ -24,8 +24,8 @@ public class BuecherEingabe extends JFrame {
 
     // KONSTRUKTOR
     public BuecherEingabe() {
+        buchListe.clear(); //Liste leeren, reset beim Start
         initGUI(); //GUI-Grundstruktur
-        buchListe.clear(); // Liste leeren (Reset beim Start)
         initObjekte(); //Standardbücher
         gruppiereRadioButtons(); // Damit nur einer wählbar ist
         setzeListener();
@@ -73,6 +73,14 @@ public class BuecherEingabe extends JFrame {
         buttonGroup.add(rbtnFuenfSterne);
     }
 
+    private void eingabeLeeren(){
+        tfTitelEingabe.setText("");
+        tfAutor.setText("");
+        cBoxFortsetzung.setSelected(false);
+        comboGenre.setSelectedIndex(0);
+        buttonGroup.clearSelection();
+    }
+
 
     private void setzeListener() {
         //--> ActionListener für alle Buttons
@@ -81,11 +89,7 @@ public class BuecherEingabe extends JFrame {
         btnEingabeLeeren.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                tfTitelEingabe.setText("");
-                tfAutor.setText("");
-                cBoxFortsetzung.setSelected(false);
-                comboGenre.setSelectedIndex(0);
-                buttonGroup.clearSelection();
+                eingabeLeeren();
             }
         });
 
@@ -102,14 +106,10 @@ public class BuecherEingabe extends JFrame {
 
                     // Prüfen ob Titel bereits existiert, ohne Beachtung Groß-/Kleinschreibung
                     for (Buch buch : buchListe) {
-                        if (buch.getTitel().toLowerCase().equals(titel)) {
+                        if (buch.getTitel().toLowerCase().equals(titel.toLowerCase())) {
                             JOptionPane.showMessageDialog(null, "Dieses Buch ist bereits gespeichert");
                             // Eingabefelder zurücksetzen
-                            tfTitelEingabe.setText("");
-                            tfAutor.setText("");
-                            cBoxFortsetzung.setSelected(false);
-                            comboGenre.setSelectedIndex(0);
-                            buttonGroup.clearSelection();
+                            eingabeLeeren();
                             return; // erst mal nicht speichern
                         }
                     }
@@ -142,11 +142,7 @@ public class BuecherEingabe extends JFrame {
                     JOptionPane.showMessageDialog(null, "Buch gespeichert! ☺");
 
                     // Eingabefelder zurücksetzen für nächstes Buch
-                    tfTitelEingabe.setText("");
-                    tfAutor.setText("");
-                    cBoxFortsetzung.setSelected(false);
-                    comboGenre.setSelectedIndex(0);
-                    buttonGroup.clearSelection();
+                    eingabeLeeren();
 
                 } catch (Exception e1) {
                     // Fehlermeldung bei ungültigen Eingaben
