@@ -29,7 +29,8 @@ public class BuecherAusgabe extends JFrame {
         initListeners();
         initLink();
 
-        zeigeListeAn("Alle"); // Anfangsanzeige
+        zeigeListeAn("Alle");// Anfangsanzeige
+        filterIstAktiv();
         setVisible(true);
     }
 
