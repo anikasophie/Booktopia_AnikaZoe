@@ -79,46 +79,46 @@ public class BuecherAusgabe extends JFrame {
         gefilterteListe.clear(); // leere, damit keine alten Einträge drin bleiben
         String text = ""; // Platzhalter, hier wird gesamter Text im Filter für Liste zusammengesetzt
 
-        if (filter.equals("Alle")) {  //Filtert ob "Alle" in der ComboBox ausgewählt ist
-            for (Buch buch : buchListe) {
-                text += buch + "\n"; // Jede Buch-Info anhängen
-            }
-            jtAreaListe.setText(text); // fertigen Text in jtArea einsetzen
-            return;
-        }
-
-        if (filter.equals("3 oder mehr Sterne")) {  //Filtert ob "3 oder mehr Sterne" in der ComboBox ausgewählt ist
-            for (Buch buch : buchListe) {
-                if (buch.getBewertung() >= 3) {
-                    gefilterteListe.add(buch);
-                    text += buch + "\n";
-
+        switch (filter) {
+            case "Alle" -> {
+                for (Buch buch : buchListe) {
+                    text += buch + "\n"; // Jede Buch-Info anhängen
                 }
-            }
-            jtAreaListe.setText(text);
-            return;
-        }
+                jtAreaListe.setText(text); // fertigen Text in jtArea einsetzen
 
-        if (filter.equals("4 oder mehr Sterne")) {  //Filtert ob "4 oder mehr Sterne" in der ComboBox ausgewählt ist
-            for (Buch buch : buchListe) {
-                if (buch.getBewertung() >= 4) {
-                    gefilterteListe.add(buch);
-                    text += buch + "\n";
-                }
+                return;
             }
-            jtAreaListe.setText(text);
-            return;
-        }
+            case "3 oder mehr Sterne" -> {
+                for (Buch buch : buchListe) {
+                    if (buch.getBewertung() >= 3) {
+                        gefilterteListe.add(buch);
+                        text += buch + "\n";
 
-        if (filter.equals("5 Sterne")) {  //Filtert ob "5 Sterne" in der ComboBox ausgewählt ist
-            for (Buch buch : buchListe) {
-                if (buch.getBewertung() >= 5) {
-                    gefilterteListe.add(buch);
-                    text += buch + "\n";
+                    }
                 }
+                jtAreaListe.setText(text);
+                return;
             }
-            jtAreaListe.setText(text);
-            return;
+            case "4 oder mehr Sterne" -> {
+                for (Buch buch : buchListe) {
+                    if (buch.getBewertung() >= 4) {
+                        gefilterteListe.add(buch);
+                        text += buch + "\n";
+                    }
+                }
+                jtAreaListe.setText(text);
+                return;
+            }
+            case "5 Sterne" -> {
+                for (Buch buch : buchListe) {
+                    if (buch.getBewertung() >= 5) {
+                        gefilterteListe.add(buch);
+                        text += buch + "\n";
+                    }
+                }
+                jtAreaListe.setText(text);
+                return;
+            }
         }
 
         for (Buch buch : buchListe) {  //nachdem schon geprüft wurde ob "Alle" oder eine Bewertung in der ComboBox ausgewählt wurde, jetzt nur noch Genres möglich
