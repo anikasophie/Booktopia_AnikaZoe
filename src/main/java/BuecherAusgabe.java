@@ -44,10 +44,6 @@ public class BuecherAusgabe extends JFrame {
 
 
     private void initListeners() {
-
-        zeigeListeAn("Alle"); // Methodenaufruf: Liste in jtArea anzeigen
-        filterIstAktiv();
-
         ComboFilter.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -82,7 +78,7 @@ public class BuecherAusgabe extends JFrame {
         gefilterteListe.clear(); // leere, damit keine alten Einträge drin bleiben
         String text = ""; // Platzhalter, hier wird gesamter Text im Filter für Liste zusammengesetzt
 
-        if (filter.contains("Alle")) {  //Filtert ob "Alle" in der ComboBox ausgewählt ist
+        if (filter.equals("Alle")) {  //Filtert ob "Alle" in der ComboBox ausgewählt ist
             for (Buch buch : buchListe) {
                 text += buch + "\n"; // Jede Buch-Info anhängen
             }
@@ -90,7 +86,7 @@ public class BuecherAusgabe extends JFrame {
             return;
         }
 
-        if (filter.contains("3 oder mehr Sterne")) {  //Filtert ob "3 oder mehr Sterne" in der ComboBox ausgewählt ist
+        if (filter.equals("3 oder mehr Sterne")) {  //Filtert ob "3 oder mehr Sterne" in der ComboBox ausgewählt ist
             for (Buch buch : buchListe) {
                 if (buch.getBewertung() >= 3) {
                     gefilterteListe.add(buch);
@@ -102,7 +98,7 @@ public class BuecherAusgabe extends JFrame {
             return;
         }
 
-        if (filter.contains("4 oder mehr Sterne")) {  //Filtert ob "4 oder mehr Sterne" in der ComboBox ausgewählt ist
+        if (filter.equals("4 oder mehr Sterne")) {  //Filtert ob "4 oder mehr Sterne" in der ComboBox ausgewählt ist
             for (Buch buch : buchListe) {
                 if (buch.getBewertung() >= 4) {
                     gefilterteListe.add(buch);
@@ -113,7 +109,7 @@ public class BuecherAusgabe extends JFrame {
             return;
         }
 
-        if (filter.contains("5 Sterne")) {  //Filtert ob "5 Sterne" in der ComboBox ausgewählt ist
+        if (filter.equals("5 Sterne")) {  //Filtert ob "5 Sterne" in der ComboBox ausgewählt ist
             for (Buch buch : buchListe) {
                 if (buch.getBewertung() >= 5) {
                     gefilterteListe.add(buch);
