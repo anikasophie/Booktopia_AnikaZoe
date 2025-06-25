@@ -106,7 +106,7 @@ public class BuecherEingabe extends JFrame {
 
                     // Prüfen ob Titel bereits existiert, ohne Beachtung Groß-/Kleinschreibung
                     for (Buch buch : buchListe) {
-                        if (buch.getTitel().toLowerCase().equals(titel.toLowerCase())) {
+                        if (buch.getTitel().equalsIgnoreCase(titel)) {
                             JOptionPane.showMessageDialog(null, "Dieses Buch ist bereits gespeichert");
                             // Eingabefelder zurücksetzen
                             eingabeLeeren();
