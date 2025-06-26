@@ -133,7 +133,7 @@ public class BuecherAusgabe extends JFrame {
 
     private boolean filterIstAktiv() {
         String filter = ComboFilter.getSelectedItem().toString();
-        if (!filter.equals("Alle")) {
+        if (filter.equals("Alle") == false) {
             cBoxAlphabetisch.setEnabled(true);
             return true;
         }
