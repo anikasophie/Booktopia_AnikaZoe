@@ -10,8 +10,8 @@ Legende:
  Klassen mit «GUI»: grafische Benutzeroberfläche (Swing)
 -: private Attribute/ Methoden
 +: öffentliche Methoden
-→: Aggregation: Klasse verwendet/enthält Objekte der Zielklasse
-o-- = Aggregation
+→: Assoziation
+o-- = Aggregation: Klasse enthält Objekte von Zielklasse
 --|> = Vererbung
 
 
@@ -73,8 +73,8 @@ class BuecherAusgabe <<GUI>> {
 
 ' Beziehungen
 ' Aggregationen (leerer Diamant)
-BuecherEingabe o-- Buch
-BuecherAusgabe o-- Buch
+BuecherEingabe o-- Buch: verwaltet
+BuecherAusgabe o-- Buch: zeigt an
 
 ' Vererbung von JFrame
 class JFrame
