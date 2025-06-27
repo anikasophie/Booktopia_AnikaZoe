@@ -82,9 +82,9 @@ public class BuecherAusgabe extends JFrame {
         switch (filter) {
             case "Alle" -> {
                 for (Buch buch : buchListe) {
-                    text += buch + "\n"; // Jede Buch-Info anhängen
+                    text += buch + "\n";
                 }
-                jtAreaListe.setText(text); // fertigen Text in jtArea einsetzen
+                jtAreaListe.setText(text);
 
                 return;
             }
