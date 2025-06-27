@@ -59,7 +59,7 @@ public class BuecherAusgabe extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 if (cBoxAlphabetisch.isSelected()) {
                     if (filterIstAktiv()) {
-                        gefilterteListe.sort(Comparator.comparing(buch -> buch.getTitel().toLowerCase())); //durch toLowerCase() wird nicht auf Groß- und Kleinschreibung geachtet (ChatGPT)
+                        gefilterteListe.sort(Comparator.comparing(buch -> buch.getTitel().toLowerCase()));
 
                         String text = "";
                         for (Buch buch : gefilterteListe) {
@@ -76,7 +76,7 @@ public class BuecherAusgabe extends JFrame {
     }
 
     private void zeigeListeAn(String filter) {
-        gefilterteListe.clear(); // leere, damit keine alten Einträge drin bleiben
+        gefilterteListe.clear(); // Leeren, damit keine alten Einträge drin bleiben
         String text = ""; // Platzhalter, hier wird gesamter Text im Filter für Liste zusammengesetzt
 
         switch (filter) {

@@ -44,7 +44,7 @@ public class BuecherEingabe extends JFrame {
 
     private ArrayList<Buch> buchListe = new ArrayList<>();
 
-    // --> 3 Standardbücher hinzufügen
+    // --> 5 Standardbücher hinzufügen
     public void initObjekte() {
         Buch b1 = new Buch("Neuschnee", "Lucy Foley", false, "Thriller", 2);
         Buch b2 = new Buch("Grundkurs Java", "Dietmar Abts", false, "Sachbuch", 5);
