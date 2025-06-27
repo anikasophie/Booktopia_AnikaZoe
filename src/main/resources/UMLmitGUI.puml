@@ -8,7 +8,7 @@ Legende:
  Klassen mit «GUI»: grafische Benutzeroberfläche (Swing)
 -: private Attribute/ Methoden
 +: öffentliche Methoden
-→ Assoziation: Klasse verwendet/ enthält Objekte der Zielklasse
+→ Aggregation: Klasse verwendet/enthält Objekte der Zielklasse
 
 end note
 

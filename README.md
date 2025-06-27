@@ -40,3 +40,8 @@ Booktopia ist ein Java-Programm mit einer grafischen Oberfläche (GUI), in dem m
 - Zoé Ziehmer
 
 ## Quellen
+- Hilfe von Julia (Tutorin) bei alphabetisch sortieren Funktion
+- Starthilfe Filter: ChatGPT
+- Link: How to create hyperlink with JLabel in Java Swing (by Nam Ha Minh, CodeJava.net)
+- ChatGPT zur generellen Überarbeitung -> Verbesserungsvorschläge
+

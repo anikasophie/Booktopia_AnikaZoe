@@ -143,8 +143,7 @@ public class BuecherAusgabe extends JFrame {
     }
 
 
-    /* Um Hyperlink hinzufügen: JLabel component muss erweitert + mouse listener erzeugt werden
-    --> Quelle: How to create hyperlink with JLabel in Java Swing (by Nam Ha Minh, CodeJava.net)*/
+    // Um Hyperlink hinzufügen: JLabel component muss erweitert + mouse listener erzeugt werden
     private void initLink() {
         jLabelLink.setText("<html><a href=''>Hier klicken</a></html>");
         jLabelLink.setCursor(new Cursor(Cursor.HAND_CURSOR)); // Maus zeigt Hand an
