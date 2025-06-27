@@ -36,7 +36,7 @@ Booktopia ist ein Java-Programm mit einer grafischen Oberfläche (GUI), in dem m
 
 
 ## Autorinnen
-- Anika Starcke.
+- Anika Starcke
 - Zoé Ziehmer
 
 ## Quellen
