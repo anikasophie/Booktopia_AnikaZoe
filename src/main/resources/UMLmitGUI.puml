@@ -1,4 +1,6 @@
 @startuml
+left to right direction
+
 skinparam classAttributeIconSize 0
 
 ' Legende als Notiz
@@ -8,7 +10,10 @@ Legende:
  Klassen mit «GUI»: grafische Benutzeroberfläche (Swing)
 -: private Attribute/ Methoden
 +: öffentliche Methoden
-→ Aggregation: Klasse verwendet/enthält Objekte der Zielklasse
+→: Aggregation: Klasse verwendet/enthält Objekte der Zielklasse
+o-- = Aggregation
+--|> = Vererbung
+
 
 end note
 
@@ -67,8 +72,14 @@ class BuecherAusgabe <<GUI>> {
 }
 
 ' Beziehungen
-BuecherEingabe "1" --> "0..*" Buch       : «verwendet»\n(erzeugt Buch-Objekte)
-BuecherAusgabe "1" --> "0..*" Buch       : «verwendet»\n(zeigt Objekte in Liste an)
+' Aggregationen (leerer Diamant)
+BuecherEingabe o-- Buch
+BuecherAusgabe o-- Buch
+
+' Vererbung von JFrame
+class JFrame
+BuecherEingabe --|> JFrame
+BuecherAusgabe --|> JFrame
 BuecherEingabe "1" --> "1" BuecherAusgabe : «öffnet»\n(öffnet Ausgabe-Fenster)
 
 
