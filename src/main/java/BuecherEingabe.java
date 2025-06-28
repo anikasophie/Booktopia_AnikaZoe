@@ -134,8 +134,9 @@ public class BuecherEingabe extends JFrame {
                         bewertung = 5;
                     }
 
-                    //Neues Buch-Objekt erstellen (mit gesammelten Infos) + in Liste speichern
+                    // Neues Buch-Objekt erstellen (mit gesammelten Infos)
                     Buch neuesBuch = new Buch(titel, autor, hatFortsetzung, genre, bewertung);
+                    // In ArrayList speichern
                     buchListe.add(neuesBuch);
 
                     // Info-Fenster anzeigen als Bestätigung
