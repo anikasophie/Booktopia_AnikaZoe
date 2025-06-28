@@ -6,7 +6,7 @@ Booktopia ist ein Java-Programm mit einer grafischen Oberfläche (GUI), in dem m
 
 
 ## UML-Diagramm
-![UML-Diagramm](src/main/resources/UMLmitGUI.png)
+![UML-Diagramm](src/main/resources/UMLmitGUIFinal.png)
 
 
 ## Klassen und Methoden
@@ -48,6 +48,6 @@ Booktopia ist ein Java-Programm mit einer grafischen Oberfläche (GUI), in dem m
 - TextFields/Area: Tutorium 8 -> Hundeheim Beispiel
 - Neues Objekt erzeugen + zur ArrayList hinzufügen: Tutorium 9, ChatGPT
 - zweites Fenster öffnen + Liste übergeben: ChatGPT
-- Quelle für Readme vorlage ??
+- Erstellung Readme: "Grundlegende Schreib- und Formatierungssyntax - GitHUb-Dokumentation"
 
 
