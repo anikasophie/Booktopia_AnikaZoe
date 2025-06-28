@@ -44,4 +44,9 @@ Booktopia ist ein Java-Programm mit einer grafischen Oberfläche (GUI), in dem m
 - Starthilfe Filter: ChatGPT
 - Link: How to create hyperlink with JLabel in Java Swing (by Nam Ha Minh, CodeJava.net)
 - ChatGPT zur generellen Überarbeitung -> Verbesserungsvorschläge
+- Icon: Julias Anleitung ("Icon für Aufgabe")
+- TextFields/Area: Tutorium 8 -> Hundeheim Beispiel
+- Neues Objekt erzeugen + zur ArrayList hinzufügen: Tutorium 9, ChatGPT
+- 2. Fenster öffnen + Liste übergeben: ChatGPT
+
 
