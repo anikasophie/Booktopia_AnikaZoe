@@ -47,6 +47,7 @@ Booktopia ist ein Java-Programm mit einer grafischen Oberfläche (GUI), in dem m
 - Icon: Julias Anleitung ("Icon für Aufgabe")
 - TextFields/Area: Tutorium 8 -> Hundeheim Beispiel
 - Neues Objekt erzeugen + zur ArrayList hinzufügen: Tutorium 9, ChatGPT
-- 2. Fenster öffnen + Liste übergeben: ChatGPT
+- zweites Fenster öffnen + Liste übergeben: ChatGPT
+- Quelle für Readme vorlage ??
 
 
