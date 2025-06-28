@@ -73,8 +73,8 @@ class BuecherAusgabe <<GUI>> {
 
 ' Beziehungen
 ' Aggregationen (leerer Diamant)
-BuecherEingabe "1" o--Buch: verwaltet "*"
-BuecherAusgabe "1" o-- Buch: zeigt an "*"
+BuecherEingabe "1" o-- "*" Buch: verwaltet
+BuecherAusgabe "1" o-- "*" Buch: zeigt an
 
 ' Vererbung von JFrame
 class JFrame
